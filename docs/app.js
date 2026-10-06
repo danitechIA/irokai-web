@@ -23,8 +23,13 @@
   const luz = $('#luz');
   if (luz && !quieto && matchMedia('(pointer:fine)').matches) {
     let x = innerWidth / 2, y = innerHeight * .3, tx = x, ty = y;
-    addEventListener('pointermove', e => { tx = e.clientX; ty = e.clientY; }, { passive: true });
-    (function bucle() { x += (tx - x) * .08; y += (ty - y) * .08; luz.style.left = x + 'px'; luz.style.top = y + 'px'; requestAnimationFrame(bucle); })();
+    let activo = false;                                   // solo anima mientras se mueve (luego descansa)
+    const bucle = () => {
+      x += (tx - x) * .08; y += (ty - y) * .08;
+      luz.style.transform = `translate3d(${x - 310}px,${y - 310}px,0)`;
+      if (Math.abs(tx - x) + Math.abs(ty - y) > .5) requestAnimationFrame(bucle); else activo = false;
+    };
+    addEventListener('pointermove', e => { tx = e.clientX; ty = e.clientY; if (!activo) { activo = true; requestAnimationFrame(bucle); } }, { passive: true });
   }
 
   /* titular letra a letra */
@@ -74,7 +79,13 @@
     const botones = $$('.lista-est button'), nom = $('#est-nombre'), desc = $('#est-desc'), mu = $$('.muestras span', visor);
     let ei = 0, ii = 0, img = $('img', visor);
     try { localStorage.removeItem('irokai-est'); } catch (e) {}   // siempre empieza igual (sin saltos al cargar)
-    E.forEach(e => e.imagenes.forEach(src => { const p = new Image(); p.decoding = 'async'; p.loading = 'lazy'; }));
+    /* precarga de verdad: primero la portada de cada estética, luego el resto; y la que vas a pulsar, al pasar el ratón */
+    const cargadas = new Set(), precargar = src => { if (!src || cargadas.has(src)) return; cargadas.add(src); const p = new Image(); p.decoding = 'async'; p.src = src; };
+    const enReposo = f => (window.requestIdleCallback || (g => setTimeout(g, 200)))(f);
+    new IntersectionObserver((ents, obs) => {
+      if (!ents.some(x => x.isIntersecting)) return; obs.disconnect();
+      enReposo(() => { E.forEach(e => precargar(e.imagenes[0])); enReposo(() => E.forEach(e => e.imagenes.forEach(precargar))); });
+    }, { rootMargin: '600px' }).observe(visor);
     const pintar = (animar = true) => {
       const e = E[ei], [a1, a2] = e.colores[ii] || [e.acento, '#E8B43A'];
       raiz.style.setProperty('--acento', a1); raiz.style.setProperty('--acento2', a2);
@@ -89,7 +100,10 @@
         nueva.decode().catch(() => {}).finally(() => { requestAnimationFrame(() => { nueva.style.opacity = 1; vieja.classList.add('saliendo'); setTimeout(() => vieja.remove(), 750); }); });
       } else img.src = src;
     };
-    botones.forEach(b => b.addEventListener('click', () => { ei = +b.dataset.i; ii = 0; pintar(); }));
+    botones.forEach(b => {
+      b.addEventListener('click', () => { ei = +b.dataset.i; ii = 0; pintar(); });
+      b.addEventListener('pointerenter', () => precargar(E[+b.dataset.i].imagenes[0]), { passive: true });
+    });
     /* la ruedecita del ratón desplaza la fila de estéticas en horizontal (cuando está en fila) */
     const fila = $('.lista-est');
     fila && fila.addEventListener('wheel', ev => {
