@@ -108,7 +108,17 @@
     if (form) { ev.preventDefault(); $('#precio').scrollIntoView({ behavior: quieto ? 'auto' : 'smooth', block: 'center' }); setTimeout(() => $('#av-email').focus({ preventScroll: true }), quieto ? 0 : 700); }
   }));
 
-  /* lista de aviso (MailerLite): envía el email sin salir de la página */
+  /* vuelta desde Buttondown: ?apuntado (falta confirmar) o ?confirmado (ya en la lista) */
+  const vuelta = new URLSearchParams(location.search);
+  if (vuelta.has('confirmado') || vuelta.has('apuntado')) {
+    const ok = vuelta.has('confirmado');
+    setTimeout(() => avisar(ok ? '🎉 <b>¡Confirmado!</b> Ya estás en la lista de Irokai. Te avisaremos el día del lanzamiento.'
+                               : '✉️ <b>¡Casi!</b> Revisa tu correo y pulsa <b>Confirmar</b> para entrar en la lista.', 8000), 600);
+    if (ok && form) { form.classList.add('hecho'); form.innerHTML = '<p class="ok">✅ <b>Ya estás en la lista.</b> El día que Irokai salga te llegará un email con el precio de lanzamiento.</p>'; }
+    history.replaceState(null, '', location.pathname + location.hash);
+  }
+
+  /* lista de aviso (Buttondown o MailerLite): envía el email sin salir de la página */
   if (form) form.addEventListener('submit', async ev => {
     ev.preventDefault();
     const email = form.email.value.trim(), boton = $('button[type=submit]', form);
