@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Irokai · Una estética para cada fondo | Personaliza Hyprland en CachyOS</title>
+<meta name="description" content="Irokai viste todo tu escritorio Linux a juego con cada fondo: colores, bordes, animaciones, terminal y VS Code. 40 fondos originales, 13 estéticas e instalación en un comando para CachyOS + Hyprland.">
+<link rel="canonical" href="https://danitechia.github.io/irokai-web/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-video-preview:-1">
+<meta name="theme-color" content="#0A0A0C">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="marca/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Irokai">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Irokai · Una estética para cada fondo | Personaliza Hyprland en CachyOS">
+<meta property="og:description" content="Irokai viste todo tu escritorio Linux a juego con cada fondo: colores, bordes, animaciones, terminal y VS Code. 40 fondos originales, 13 estéticas e instalación en un comando para CachyOS + Hyprland.">
+<meta property="og:url" content="https://danitechia.github.io/irokai-web/">
+<meta property="og:image" content="https://danitechia.github.io/irokai-web/marca/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Irokai 色界 — Una estética para cada fondo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Irokai · Una estética para cada fondo | Personaliza Hyprland en CachyOS">
+<meta name="twitter:description" content="Irokai viste todo tu escritorio Linux a juego con cada fondo: colores, bordes, animaciones, terminal y VS Code. 40 fondos originales, 13 estéticas e instalación en un comando para CachyOS + Hyprland.">
+<meta name="twitter:image" content="https://danitechia.github.io/irokai-web/marca/og.png">
+<link rel="preload" href="fuentes/sans-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="estilo.css">
+<link rel="preload" as="image" href="media/heroe.jpg"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Irokai", "alternateName": "色界", "description": "Personalización para escritorios Linux: una estética para cada fondo en CachyOS + Hyprland.", "applicationCategory": "DesktopEnhancementApplication", "operatingSystem": "Linux (CachyOS, Arch Linux) con Hyprland", "softwareVersion": "1.1", "inLanguage": "es", "url": "https://danitechia.github.io/irokai-web", "image": "https://danitechia.github.io/irokai-web/marca/og.png", "screenshot": "https://danitechia.github.io/irokai-web/media/trailer.jpg", "offers": {"@type": "Offer", "price": "9", "priceCurrency": "EUR", "availability": "https://schema.org/PreOrder", "url": "https://danitechia.github.io/irokai-web/#precio"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Irokai", "url": "https://danitechia.github.io/irokai-web", "logo": "https://danitechia.github.io/irokai-web/marca/favicon.svg", "email": "hola@irokai.dev", "sameAs": ["https://www.tiktok.com/@irokai.dev"]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué necesito para usar Irokai?", "acceptedAnswer": {"@type": "Answer", "text": "Un PC con <b>CachyOS</b> (recomendada la edición Hyprland) u otra distro basada en Arch con Hyprland 0.55 o superior y Noctalia. El instalador comprueba todo y te avisa si falta algo."}}, {"@type": "Question", "name": "¿Cómo se instala?", "acceptedAnswer": {"@type": "Answer", "text": "Descomprimes el zip, abres una terminal y ejecutas <code>./install.sh</code>. Instala lo necesario desde los repositorios oficiales, guarda una copia de tu configuración y lo deja todo listo. Tarda unos minutos."}}, {"@type": "Question", "name": "¿Puedo volver a como estaba?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Antes de tocar nada se guarda una copia de tu configuración, y <code>./uninstall.sh</code> deshace la instalación sin borrar tus fondos."}}, {"@type": "Question", "name": "¿Puedo usar mis propios fondos?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, y es lo mejor: pon cualquier imagen o vídeo con <code>fondo añadir</code> (o cópialo en la carpeta <code>mios</code>) y Irokai lee sus colores, elige la estética que mejor le va y configura todo el escritorio a juego. No tienes que tocar ningún archivo."}}, {"@type": "Question", "name": "¿Qué fondos incluye?", "acceptedAnswer": {"@type": "Answer", "text": "40 fondos <b>originales</b> creados por Irokai (36 fijos en 12 estilos y 4 animados), libres de derechos de terceros. Además, con <code>irokai fondos buscar</code> puedes buscar y descargar tú mismo fondos SFW de Wallhaven para tu uso personal."}}, {"@type": "Question", "name": "¿Incluye Spotify y VS Code?", "acceptedAnswer": {"@type": "Answer", "text": "Instala <b>Spotify</b> (cliente oficial) y <b>Visual Studio Code</b> (de Microsoft, bajo su licencia) y los configura. VS Code se tiñe con los colores de tu fondo. Spotify funciona tal cual con las teclas multimedia, el reproductor del escritorio y las letras en karaoke. Si quieres que <b>también se vista a juego</b>, ejecuta <code>irokai spotify-tema activar</code>: usa Spicetify, que modifica la app de Spotify (sus condiciones no lo permiten), así que solo se activa si tú lo decides tras leer el aviso."}}, {"@type": "Question", "name": "¿Cómo activo la licencia?", "acceptedAnswer": {"@type": "Answer", "text": "El instalador te pide la clave del correo de compra. También puedes hacerlo luego con <code>irokai licencia activar &lt;clave&gt;</code>. Vale para 3 ordenadores tuyos y puedes liberarla con <code>irokai licencia desactivar</code>."}}, {"@type": "Question", "name": "¿Va fluido en ordenadores normales?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Los efectos están optimizados y los fondos animados se pausan solos con juegos o vídeos a pantalla completa. Si quieres el máximo rendimiento, <kbd>Super</kbd>+<kbd>G</kbd> activa el modo juego, y <kbd>Super</kbd>+<kbd>B</kbd> el modo ahorro."}}, {"@type": "Question", "name": "¿Funciona en Windows o macOS?", "acceptedAnswer": {"@type": "Answer", "text": "No. Irokai es para Linux (CachyOS / Arch + Hyprland). Si quieres probarlo, instala CachyOS en otro disco o en una máquina virtual."}}, {"@type": "Question", "name": "¿Es un pago único?", "acceptedAnswer": {"@type": "Answer", "text": "Sí: 9 € una vez, con las actualizaciones de la versión 1.x incluidas. Sin suscripciones."}}, {"@type": "Question", "name": "¿Hay reembolso?", "acceptedAnswer": {"@type": "Answer", "text": "Es contenido digital de descarga inmediata, así que al comprar aceptas perder el derecho de desistimiento. Aun así, si Irokai no funciona como se describe en tu sistema compatible y no lo podemos arreglar, te devolvemos el dinero. Detalles en <a href=\"legal/reembolsos.html\">Reembolsos</a>."}}, {"@type": "Question", "name": "¿Puedo compartirlo con amigos?", "acceptedAnswer": {"@type": "Answer", "text": "La licencia es personal: puedes instalarlo en tus propios ordenadores, pero no redistribuirlo. Si les gusta, mándales el enlace 💛"}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "Irokai — tráiler", "description": "Una estética para cada fondo en Linux con CachyOS + Hyprland.", "thumbnailUrl": "https://danitechia.github.io/irokai-web/media/trailer.jpg", "contentUrl": "https://danitechia.github.io/irokai-web/media/trailer.mp4", "uploadDate": "2026-10-06"}</script>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<div id="progreso"></div><div id="luz" aria-hidden="true"></div>
+<header class="cab" id="cab"><div class="contenedor">
+  <a class="marca" href="./" aria-label="Irokai, inicio"><span class="sello">色</span>IROKAI</a>
+  <button class="hamburguesa" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">☰</button>
+  <nav class="menu" id="menu" aria-label="Principal">
+    <a href="#como">Cómo funciona</a><a href="#esteticas">Estéticas</a><a href="#funciones">Funciones</a>
+    <a href="#precio">Precio</a><a href="#faq">Preguntas</a><a href="guia/">Guía</a>
+  </nav>
+  <a class="boton peq" href="#precio" data-comprar>Conseguir · 9 €</a>
+</div></header>
+<main id="contenido">
+
+<section class="heroe" aria-labelledby="h1">
+ <span class="go" style="left:4%;top:20%;animation-delay:0.3s">激</span><span class="go" style="left:46%;top:12%;animation-delay:1.4s">色</span><span class="go" style="left:90%;top:30%;animation-delay:0.8s">界</span><span class="go" style="left:7%;top:76%;animation-delay:2.1s">激</span><span class="go" style="left:93%;top:78%;animation-delay:2.7s">色</span>
+ <div class="contenedor">
+  <div>
+   <span class="etiqueta"><b>NUEVO</b> Para CachyOS + Hyprland</span>
+   <h1 id="h1" data-letras>Una estética para <span class="acento">cada fondo.</span></h1>
+   <p class="lead">Irokai convierte tu escritorio Linux en algo que da gusto mirar: pon <b>cualquier</b> fondo y todo se viste a juego —colores, bordes, animaciones, terminal, VS Code y Spotify—. Se configura solo. 40 fondos originales, 13 estéticas y un solo comando para instalar.</p>
+   <div class="acciones">
+    <a class="boton" href="#precio" data-comprar>Conseguir Irokai · 9 €</a>
+    <a class="boton fantasma" href="#trailer" data-trailer>▶ Ver el tráiler</a>
+   </div>
+   <div class="confianza"><span>Pago único</span><span>Instalación en 1 comando</span><span>Tus fondos, configurados solos</span><span>Desinstalable</span><span>Arte 100 % original</span></div>
+  </div>
+  <div class="monitor rv" id="video">
+   <video autoplay muted loop playsinline preload="metadata" poster="media/heroe.jpg" width="1280" height="720" aria-label="Irokai en acción">
+    <source src="media/heroe.mp4" type="video/mp4"></video>
+  </div>
+ </div>
+ <span class="bajar" aria-hidden="true">DESLIZA ↓</span>
+</section>
+
+<dialog id="trailer" aria-label="Tráiler de Irokai"><button class="cerrar" type="button" aria-label="Cerrar">✕</button>
+ <video controls playsinline preload="none" poster="media/trailer.jpg" width="1920" height="1080" data-src-dialog="media/trailer.mp4"></video></dialog>
+
+<div class="cinta" aria-hidden="true"><div><span><b>侍</b>Samurái</span><span><b>激</b>Shōnen</span><span><b>桜</b>Sakura</span><span><b>✦</b>Anime</span><span><b>漫</b>Manga</span><span><b>☾</b>Lo-fi</span><span><b>◢</b>Retro</span><span><b>▣</b>Pixel</span><span><b>⬢</b>Mecha</span><span><b>静</b>Calma</span><span><b>山</b>Montaña</span><span><b>◆</b>CachyOS</span><span><b>動</b>Animado</span><span><b>侍</b>Samurái</span><span><b>激</b>Shōnen</span><span><b>桜</b>Sakura</span><span><b>✦</b>Anime</span><span><b>漫</b>Manga</span><span><b>☾</b>Lo-fi</span><span><b>◢</b>Retro</span><span><b>▣</b>Pixel</span><span><b>⬢</b>Mecha</span><span><b>静</b>Calma</span><span><b>山</b>Montaña</span><span><b>◆</b>CachyOS</span><span><b>動</b>Animado</span></div></div>
+
+<section id="como" aria-labelledby="h-como"><div class="contenedor">
+ <div class="cabecera rv"><span class="kanji">一 · 仕組み</span><h2 id="h-como">Cambia un fondo. Cambia todo.</h2>
+  <p class="sub">Nada de editar archivos ni copiar dotfiles de foros. Irokai lo hace por ti, cada vez que cambias de fondo.</p></div>
+ <div class="pasos"><div class="paso rv" style="--d:0.0s"><div class="ico">🖼️</div><h3>Pon cualquier fondo</h3><p>Uno de los 40 originales o el tuyo: una foto, un dibujo, un vídeo o un enlace.</p></div><div class="paso rv" style="--d:0.1s"><div class="ico">🎨</div><h3>Irokai lee sus colores</h3><p>Detecta el acento de la imagen y la estética de su carpeta: samurái, retro, sakura, manga…</p></div><div class="paso rv" style="--d:0.2s"><div class="ico">✨</div><h3>Todo se viste a juego</h3><p>Bordes, barra, terminal, prompt, logo, animaciones, VS Code… en menos de un segundo.</p></div></div>
+</div></section>
+
+<section id="esteticas" aria-labelledby="h-est"><div class="contenedor">
+ <div class="cabecera rv"><span class="kanji">二 · 美学</span><h2 id="h-est">13 estéticas. Infinitos looks.</h2>
+  <p class="sub">Elige una y mira cómo cambia hasta esta página. Cada fondo trae además sus propios colores.</p></div>
+ <div class="esteticas rv">
+  <div class="lista-est" role="group" aria-label="Estéticas"><button type="button" data-i="0" aria-pressed="true"><i>侍</i>Samurái</button><button type="button" data-i="1" aria-pressed="false"><i>激</i>Shōnen</button><button type="button" data-i="2" aria-pressed="false"><i>桜</i>Sakura</button><button type="button" data-i="3" aria-pressed="false"><i>✦</i>Anime</button><button type="button" data-i="4" aria-pressed="false"><i>漫</i>Manga</button><button type="button" data-i="5" aria-pressed="false"><i>☾</i>Lo-fi</button><button type="button" data-i="6" aria-pressed="false"><i>◢</i>Retro</button><button type="button" data-i="7" aria-pressed="false"><i>▣</i>Pixel</button><button type="button" data-i="8" aria-pressed="false"><i>⬢</i>Mecha</button><button type="button" data-i="9" aria-pressed="false"><i>静</i>Calma</button><button type="button" data-i="10" aria-pressed="false"><i>山</i>Montaña</button><button type="button" data-i="11" aria-pressed="false"><i>◆</i>CachyOS</button><button type="button" data-i="12" aria-pressed="false"><i>動</i>Animado</button></div>
+  <div>
+   <div class="visor" id="visor">
+    <img src="galeria/japon-1.jpg" alt="Fondo original de la estética Samurái" width="960" height="540" loading="lazy">
+    <div class="flechas"><button type="button" data-paso="-1" aria-label="Fondo anterior">‹</button><button type="button" data-paso="1" aria-label="Fondo siguiente">›</button></div>
+    <div class="info"><div><h3 id="est-nombre">侍 Samurái</h3><p id="est-desc">Tinta negra, papel y sangre. Japón tradicional y sobrio.</p></div>
+     <div class="muestras" aria-label="Colores de este fondo"><span></span><span></span></div></div>
+   </div>
+   <p class="nota-unica">Pulsa <b>‹ ›</b>: con cada fondo cambian los colores. Eso es la <b>estética única por fondo</b>.</p>
+  </div>
+ </div>
+</div></section>
+
+<section id="funciones" aria-labelledby="h-func"><div class="contenedor">
+ <div class="cabecera rv"><span class="kanji">三 · 機能</span><h2 id="h-func">Todo lo que trae</h2>
+  <p class="sub">Vídeos grabados en un escritorio real con Irokai. Sin trucos de edición.</p></div>
+ <div class="funciones"><article class="func grande rv" style="--d:0.0s">
+  <video muted loop playsinline preload="none" poster="media/unica.jpg" data-src="media/unica.mp4" aria-label="Cada fondo, una estética única" width="1280" height="720"></video>
+  <div><h3>Cada fondo, una estética única</h3><p>Irokai lee los colores de tu fondo y viste a juego bordes, barra, terminal, prompt, VS Code y Spotify. 40 fondos originales: 40 looks distintos.</p></div></article><article class="func grande rv" style="--d:0.08s">
+  <video muted loop playsinline preload="none" poster="media/anadir.jpg" data-src="media/anadir.mp4" aria-label="Añade cualquier fondo: se configura solo" width="1280" height="720"></video>
+  <div><h3>Añade cualquier fondo: se configura solo</h3><p>Tu foto, un dibujo, un vídeo o un enlace: <code>fondo añadir</code> y Irokai elige estética y colores por ti. Sin tocar un solo archivo.</p></div></article><article class="func rv" style="--d:0.16s">
+  <video muted loop playsinline preload="none" poster="media/menu.jpg" data-src="media/menu.mp4" aria-label="Todo en un menú" width="1280" height="720"></video>
+  <div><h3>Todo en un menú</h3><p>Pulsa <kbd>Super</kbd>+<kbd>M</kbd>: estéticas, fondos, pantallas, sonidos, animaciones, guía y mantenimiento.</p></div></article><article class="func rv" style="--d:0.0s">
+  <video muted loop playsinline preload="none" poster="media/fondos.jpg" data-src="media/fondos.mp4" aria-label="Selector con vista previa" width="1280" height="720"></video>
+  <div><h3>Selector con vista previa</h3><p>Busca entre todos tus fondos y míralos antes de ponerlos. Siguiente o aleatorio con un atajo.</p></div></article><article class="func rv" style="--d:0.08s">
+  <video muted loop playsinline preload="none" poster="media/ventanas.jpg" data-src="media/ventanas.mp4" aria-label="Animaciones con personalidad" width="1280" height="720"></video>
+  <div><h3>Animaciones con personalidad</h3><p>Cinco perfiles: suave, rápida, rebote, dramática y mínima. Cada estética trae el suyo.</p></div></article><article class="func rv" style="--d:0.16s">
+  <video muted loop playsinline preload="none" poster="media/vscode.jpg" data-src="media/vscode.mp4" aria-label="VS Code a juego" width="1280" height="720"></video>
+  <div><h3>VS Code a juego</h3><p>Visual Studio Code queda instalado, configurado y se tiñe con los colores de tu fondo.</p></div></article><article class="func rv" style="--d:0.0s">
+  <video muted loop playsinline preload="none" poster="media/atajos.jpg" data-src="media/atajos.mp4" aria-label="Atajos para todo" width="1280" height="720"></video>
+  <div><h3>Atajos para todo</h3><p>Más de 70 atajos con buscador en español (<kbd>Super</kbd>+<kbd>H</kbd>). Capturas con <kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>, como en Windows.</p></div></article><article class="func rv" style="--d:0.08s">
+  <video muted loop playsinline preload="none" poster="media/terminal.jpg" data-src="media/terminal.mp4" aria-label="Una terminal con alma" width="1280" height="720"></video>
+  <div><h3>Una terminal con alma</h3><p>Prompt japonés, bienvenida con el logo de tu estética, bonsái animado, visualizador de música…</p></div></article><article class="func grande rv" style="--d:0.16s">
+  <video muted loop playsinline preload="none" poster="media/animados.jpg" data-src="media/animados.mp4" aria-label="Fondos animados originales" width="1280" height="720"></video>
+  <div><h3>Fondos animados originales</h3><p>Bucles hechos con código y tus propios vídeos. Se pausan solos al jugar a pantalla completa.</p></div></article><article class="func grande rv" style="--d:0.0s">
+  <video muted loop playsinline preload="none" poster="media/widgets.jpg" data-src="media/widgets.mp4" aria-label="Widgets que mueves con el ratón" width="1280" height="720"></video>
+  <div><h3>Widgets que mueves con el ratón</h3><p><kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd>: arrastra el reproductor y el visualizador donde quieras o añade reloj, tiempo…</p></div></article><article class="func rv" style="--d:0.08s">
+  <video muted loop playsinline preload="none" poster="media/modos.jpg" data-src="media/modos.mp4" aria-label="Modo juego y modo ahorro" width="1280" height="720"></video>
+  <div><h3>Modo juego y modo ahorro</h3><p><kbd>Super</kbd>+<kbd>G</kbd> quita los efectos pesados al instante; <kbd>Super</kbd>+<kbd>B</kbd> alarga la batería.</p></div></article><article class="func rv" style="--d:0.16s">
+  <video muted loop playsinline preload="none" poster="media/noctalia.jpg" data-src="media/noctalia.mp4" aria-label="Barra, lanzador y paneles" width="1280" height="720"></video>
+  <div><h3>Barra, lanzador y paneles</h3><p>Dock, centro de control, letras de canciones en karaoke y actualizaciones, todo integrado.</p></div></article><article class="func rv" style="--d:0.0s">
+  <video muted loop playsinline preload="none" poster="media/pantallas.jpg" data-src="media/pantallas.mp4" aria-label="Varios monitores, sin dolor" width="1280" height="720"></video>
+  <div><h3>Varios monitores, sin dolor</h3><p>Solo externa, solo portátil, espejo o las dos. Izquierda, derecha, arriba o abajo. Siempre a su máxima frecuencia.</p></div></article></div>
+</div></section>
+
+<section aria-labelledby="h-anim" style="padding-top:0"><div class="contenedor">
+ <div class="cabecera rv"><span class="kanji">四 · 動</span><h2 id="h-anim">Fondos animados, hechos con código</h2>
+  <p class="sub">Ligeros (menos de 2 MB), en bucle perfecto y originales. Y puedes poner cualquier vídeo tuyo.</p></div>
+ <div class="animados rv"><video muted loop playsinline preload="none" data-src="galeria/anim-retro-rejilla.mp4" aria-label="Fondo animado original: retro rejilla" width="960" height="540"></video><video muted loop playsinline preload="none" data-src="galeria/anim-sakura-noche.mp4" aria-label="Fondo animado original: sakura noche" width="960" height="540"></video><video muted loop playsinline preload="none" data-src="galeria/anim-lofi-lluvia.mp4" aria-label="Fondo animado original: lofi lluvia" width="960" height="540"></video><video muted loop playsinline preload="none" data-src="galeria/anim-mecha-hud.mp4" aria-label="Fondo animado original: mecha hud" width="960" height="540"></video></div>
+</div></section>
+
+<section id="incluye" aria-labelledby="h-inc"><div class="contenedor">
+ <div class="cabecera rv"><span class="kanji">五 · 内容</span><h2 id="h-inc">Qué incluye</h2></div>
+ <div class="incluye">
+  <div class="caja rv"><ul class="lista-check">
+   <li><b>13 estéticas</b> completas: colores, bordes, redondeo, animación, prompt, logo y tema.</li>
+   <li><b>40 fondos originales</b> (36 fijos + 4 animados) y estética única para cada fondo.</li>
+   <li><b>Cualquier fondo tuyo se configura solo</b>: Irokai lee sus colores y elige la estética.</li>
+   <li><b>Modo juego y modo ahorro</b>, luz nocturna y <b>widgets que mueves con el ratón</b>.</li>
+   <li><b>Ajustes en un menú</b> (<kbd>Super</kbd>+<kbd>I</kbd>): todo es configurable.</li>
+   <li><b>Fondos animados</b> con pausa automática al jugar o ver vídeos a pantalla completa.</li>
+   <li><b>Visual Studio Code</b> configurado y a juego, y <b>Spotify</b> oficial integrado (tema a juego opcional).</li>
+   <li><b>Menú central</b>, más de 70 atajos y chuleta con buscador en español.</li>
+   <li><b>Sonidos de escritorio</b>, 5 perfiles de animación y gestor de monitores.</li>
+   <li><b>Terminal preciosa</b>: kitty, fish, prompt japonés, fastfetch y rincón zen.</li>
+   <li><b>Guía interactiva</b> en español para aprender a usar todo tu sistema.</li>
+   <li>Instalador con <b>copia de seguridad</b> y desinstalador.</li>
+  </ul></div>
+  <div class="caja rv" style="--d:.1s"><h3>Requisitos</h3><ul class="lista-check">
+   <li><b>CachyOS</b> (recomendada la edición Hyprland) u otra distro basada en Arch.</li>
+   <li><b>Hyprland 0.55+</b> con configuración Lua y <b>Noctalia</b>.</li>
+   <li>Conexión a internet durante la instalación.</li></ul>
+   <h3 style="margin-top:26px">Instalación</h3>
+   <pre class="instalar"><button class="copiar" type="button">copiar</button><span class="c"># tras descargar el zip:</span>
+<span class="p">$</span> unzip irokai-1.1.zip && cd irokai
+<span class="p">$</span> ./install.sh</pre></div>
+ </div>
+</div></section>
+
+<section id="precio" aria-labelledby="h-precio"><div class="contenedor precio">
+ <div class="rv"><span class="kanji" style="font:900 1rem var(--kanji);color:var(--acento);letter-spacing:.3em">六 · 価格</span>
+  <h2 id="h-precio">Un pago. Tuyo para siempre.</h2>
+  <p class="sub">Sin suscripciones. Las actualizaciones de la versión 1.x están incluidas.</p></div>
+ <div class="tarjeta-precio rv" style="--d:.1s">
+  <h3>Irokai 1.1</h3>
+  <div class="cifra">9 €<small> IVA incl.</small><span class="tachado">14 €</span></div>
+  <p class="sub">Precio de lanzamiento.</p>
+  <ul class="lista-check" style="margin:22px 0 26px">
+   <li>Todo lo de «Qué incluye»</li><li>Licencia personal para 3 ordenadores</li><li>Descarga inmediata</li><li>Actualizaciones 1.x gratis</li><li>Soporte por email</li></ul>
+  <a class="boton" style="width:100%;justify-content:center" href="#precio" data-comprar data-real>Comprar Irokai</a>
+  <p class="legal-compra">El pago lo gestiona <b>Lemon Squeezy</b> como revendedor autorizado (<i>merchant of record</i>), que emite la factura y aplica el IVA de tu país.
+   Al comprar aceptas los <a href="legal/terminos.html">Términos</a> y la <a href="legal/licencia.html">Licencia</a>. Al ser contenido digital de descarga inmediata,
+   se te pedirá consentimiento expreso para empezar la descarga y perder el derecho de desistimiento (art. 103.m TRLGDCU). Consulta <a href="legal/reembolsos.html">Reembolsos</a>.</p>
+ </div>
+</div></section>
+
+<section id="faq" aria-labelledby="h-faq"><div class="contenedor">
+ <div class="cabecera rv"><span class="kanji">七 · 質問</span><h2 id="h-faq">Preguntas frecuentes</h2></div>
+ <div class="faq rv"><details><summary>¿Qué necesito para usar Irokai?</summary><div><p>Un PC con <b>CachyOS</b> (recomendada la edición Hyprland) u otra distro basada en Arch con Hyprland 0.55 o superior y Noctalia. El instalador comprueba todo y te avisa si falta algo.</p></div></details><details><summary>¿Cómo se instala?</summary><div><p>Descomprimes el zip, abres una terminal y ejecutas <code>./install.sh</code>. Instala lo necesario desde los repositorios oficiales, guarda una copia de tu configuración y lo deja todo listo. Tarda unos minutos.</p></div></details><details><summary>¿Puedo volver a como estaba?</summary><div><p>Sí. Antes de tocar nada se guarda una copia de tu configuración, y <code>./uninstall.sh</code> deshace la instalación sin borrar tus fondos.</p></div></details><details><summary>¿Puedo usar mis propios fondos?</summary><div><p>Sí, y es lo mejor: pon cualquier imagen o vídeo con <code>fondo añadir</code> (o cópialo en la carpeta <code>mios</code>) y Irokai lee sus colores, elige la estética que mejor le va y configura todo el escritorio a juego. No tienes que tocar ningún archivo.</p></div></details><details><summary>¿Qué fondos incluye?</summary><div><p>40 fondos <b>originales</b> creados por Irokai (36 fijos en 12 estilos y 4 animados), libres de derechos de terceros. Además, con <code>irokai fondos buscar</code> puedes buscar y descargar tú mismo fondos SFW de Wallhaven para tu uso personal.</p></div></details><details><summary>¿Incluye Spotify y VS Code?</summary><div><p>Instala <b>Spotify</b> (cliente oficial) y <b>Visual Studio Code</b> (de Microsoft, bajo su licencia) y los configura. VS Code se tiñe con los colores de tu fondo. Spotify funciona tal cual con las teclas multimedia, el reproductor del escritorio y las letras en karaoke. Si quieres que <b>también se vista a juego</b>, ejecuta <code>irokai spotify-tema activar</code>: usa Spicetify, que modifica la app de Spotify (sus condiciones no lo permiten), así que solo se activa si tú lo decides tras leer el aviso.</p></div></details><details><summary>¿Cómo activo la licencia?</summary><div><p>El instalador te pide la clave del correo de compra. También puedes hacerlo luego con <code>irokai licencia activar &lt;clave&gt;</code>. Vale para 3 ordenadores tuyos y puedes liberarla con <code>irokai licencia desactivar</code>.</p></div></details><details><summary>¿Va fluido en ordenadores normales?</summary><div><p>Sí. Los efectos están optimizados y los fondos animados se pausan solos con juegos o vídeos a pantalla completa. Si quieres el máximo rendimiento, <kbd>Super</kbd>+<kbd>G</kbd> activa el modo juego, y <kbd>Super</kbd>+<kbd>B</kbd> el modo ahorro.</p></div></details><details><summary>¿Funciona en Windows o macOS?</summary><div><p>No. Irokai es para Linux (CachyOS / Arch + Hyprland). Si quieres probarlo, instala CachyOS en otro disco o en una máquina virtual.</p></div></details><details><summary>¿Es un pago único?</summary><div><p>Sí: 9 € una vez, con las actualizaciones de la versión 1.x incluidas. Sin suscripciones.</p></div></details><details><summary>¿Hay reembolso?</summary><div><p>Es contenido digital de descarga inmediata, así que al comprar aceptas perder el derecho de desistimiento. Aun así, si Irokai no funciona como se describe en tu sistema compatible y no lo podemos arreglar, te devolvemos el dinero. Detalles en <a href="legal/reembolsos.html">Reembolsos</a>.</p></div></details><details><summary>¿Puedo compartirlo con amigos?</summary><div><p>La licencia es personal: puedes instalarlo en tus propios ordenadores, pero no redistribuirlo. Si les gusta, mándales el enlace 💛</p></div></details></div>
+</div></section>
+
+<section class="final" aria-labelledby="h-final"><div class="contenedor" style="position:relative">
+ <div class="gigante" aria-hidden="true">色界</div>
+ <h2 id="h-final" class="rv">Tu escritorio, a tu manera.</h2>
+ <p class="sub rv">Pon un fondo. Irokai se encarga del resto.</p>
+ <div class="acciones rv" style="justify-content:center;margin-top:28px"><a class="boton" href="#precio" data-comprar>Conseguir Irokai · 9 €</a></div>
+</div></section>
+
+</main>
+<footer><div class="contenedor">
+ <div class="rejilla">
+  <div><a class="marca" href="./"><span class="sello">色</span>IROKAI</a>
+   <p>Una estética para cada fondo. Personalización para escritorios Linux con CachyOS + Hyprland.</p>
+   <p>Contacto y soporte: <a href="mailto:hola@irokai.dev">hola@irokai.dev</a></p></div>
+  <div><h4>Producto</h4><ul><li><a href="#funciones">Funciones</a></li><li><a href="#esteticas">Estéticas</a></li>
+   <li><a href="#precio">Precio</a></li><li><a href="guia/">Guía de uso</a></li><li><a href="#faq">Preguntas</a></li></ul></div>
+  <div><h4>Legal</h4><ul><li><a href="legal/aviso-legal.html">Aviso legal</a></li><li><a href="legal/terminos.html">Términos y condiciones</a></li>
+   <li><a href="legal/licencia.html">Licencia de uso</a></li><li><a href="legal/reembolsos.html">Reembolsos</a></li>
+   <li><a href="legal/privacidad.html">Privacidad</a></li><li><a href="legal/cookies.html">Cookies</a></li>
+   <li><a href="legal/terceros.html">Software de terceros y retirada de contenido</a></li></ul></div>
+ </div>
+ <p class="descargo">© 2026 Irokai. Irokai es un proyecto independiente y <b>no está afiliado ni respaldado</b> por CachyOS, Arch Linux,
+ Hyprland, Noctalia, Spotify, Microsoft ni Wallhaven. Sus nombres y marcas pertenecen a sus respectivos dueños y se mencionan solo para indicar compatibilidad.
+ Todo el arte que se muestra en esta web es original de Irokai.</p>
+</div></footer>
+<div id="aviso" role="status" aria-live="polite"></div>
+<script>window.IROKAI={"compra": "", "esteticas": [{"id": "samurai", "nombre": "Samurái", "simbolo": "侍", "desc": "Tinta negra, papel y sangre. Japón tradicional y sobrio.", "acento": "#e53935", "animacion": "suave", "imagenes": ["galeria/japon-1.jpg", "galeria/japon-2.jpg", "galeria/japon-3.jpg"], "colores": [["#C83838", "#77D9D9"], ["#C73334", "#77D9D8"], ["#9E2F29", "#E4C49D"]]}, {"id": "shonen", "nombre": "Shōnen", "simbolo": "激", "desc": "Monocromo, carmesí y dorado: la intensidad de un manga de acción.", "acento": "#c62828", "animacion": "dramatica", "imagenes": ["galeria/shonen-1.jpg", "galeria/shonen-2.jpg", "galeria/shonen-3.jpg", "galeria/shonen-4.jpg", "galeria/shonen-5.jpg", "galeria/shonen-6.jpg"], "colores": [["#9F2425", "#77D9D8"], ["#C19931", "#7792D9"], ["#BC4443", "#77D8D9"], ["#F4C531", "#EA417A"], ["#F25DA3", "#F6E15F"], ["#32D2B7", "#F36B3B"]]}, {"id": "sakura", "nombre": "Sakura", "simbolo": "桜", "desc": "Primavera japonesa: rosa, crema y pétalos.", "acento": "#d27e99", "animacion": "suave", "imagenes": ["galeria/sakura-1.jpg", "galeria/sakura-2.jpg", "galeria/sakura-3.jpg"], "colores": [["#AE6F89", "#B174B8"], ["#ECA6BA", "#77D9BD"], ["#75689E", "#5672B8"]]}, {"id": "anime", "nombre": "Anime", "simbolo": "✦", "desc": "Colores vivos sacados del fondo, como un opening.", "acento": "#7e9cd8", "animacion": "rebote", "imagenes": ["galeria/anime-1.jpg", "galeria/anime-2.jpg", "galeria/anime-3.jpg"], "colores": [["#3677DB", "#D9B277"], ["#E99072", "#B86881"], ["#355A9E", "#D9B777"]]}, {"id": "manga", "nombre": "Manga", "simbolo": "漫", "desc": "Blanco y negro puro, como una página de manga.", "acento": "#ffffff", "animacion": "rapida", "imagenes": ["galeria/manga-1.jpg", "galeria/manga-2.jpg", "galeria/manga-3.jpg"], "colores": [["#ffffff", "#D4A72C"], ["#ffffff", "#D4A72C"], ["#ffffff", "#D4A72C"]]}, {"id": "lofi", "nombre": "Lo-fi", "simbolo": "☾", "desc": "Noches tranquilas, morados suaves y música para estudiar.", "acento": "#957fb8", "animacion": "suave", "imagenes": ["galeria/lofi-1.jpg", "galeria/lofi-2.jpg", "galeria/lofi-3.jpg"], "colores": [["#6A499E", "#B3D977"], ["#38629E", "#D9B177"], ["#9E537B", "#C27C73"]]}, {"id": "retro", "nombre": "Retro", "simbolo": "◢", "desc": "Synthwave de los 80: neón rosa, cian y rejillas al atardecer. ◢◤", "acento": "#ff2a6d", "animacion": "rebote", "imagenes": ["galeria/retro-1.jpg", "galeria/retro-2.jpg", "galeria/retro-3.jpg"], "colores": [["#85179E", "#FDA66D"], ["#FCA96D", "#4D2CB8"], ["#60109E", "#FDA56D"]]}, {"id": "pixel", "nombre": "Pixel", "simbolo": "▣", "desc": "Pixel art y nostalgia de 16 bits.", "acento": "#ffb000", "animacion": "rapida", "imagenes": ["galeria/pixel-1.jpg", "galeria/pixel-2.jpg", "galeria/pixel-3.jpg"], "colores": [["#4B5FA8", "#5DB87C"], ["#E1566F", "#8F6AB8"], ["#37A6B9", "#4CB88E"]]}, {"id": "mecha", "nombre": "Mecha", "simbolo": "⬢", "desc": "Robots gigantes: morado, verde ácido y alertas de sistema.", "acento": "#7cfc00", "animacion": "dramatica", "imagenes": ["galeria/mecha-1.jpg", "galeria/mecha-2.jpg", "galeria/mecha-3.jpg"], "colores": [["#55259E", "#7CDA21"], ["#DC5822", "#77BCD9"], ["#37D2B7", "#7A7AB8"]]}, {"id": "calma", "nombre": "Calma", "simbolo": "静", "desc": "Paisajes tranquilos, verdes y azules suaves.", "acento": "#7aa89f", "animacion": "suave", "imagenes": ["galeria/calma-1.jpg", "galeria/calma-2.jpg", "galeria/calma-3.jpg"], "colores": [["#CDA191", "#897BB8"], ["#719E99", "#D97782"], ["#56639E", "#D9C877"]]}, {"id": "montana", "nombre": "Montaña", "simbolo": "山", "desc": "Cumbres, niebla y aire frío.", "acento": "#98bb6c", "animacion": "suave", "imagenes": ["galeria/montana-1.jpg", "galeria/montana-2.jpg", "galeria/montana-3.jpg"], "colores": [["#6B829E", "#D9AC77"], ["#BD8667", "#77B6D9"], ["#789E88", "#D977AF"]]}, {"id": "cachyos", "nombre": "CachyOS", "simbolo": "◆", "desc": "Los colores oficiales de CachyOS: verde azulado y azul noche.", "acento": "#00aa84", "animacion": "suave", "imagenes": ["galeria/cachyos-1.jpg", "galeria/cachyos-2.jpg", "galeria/cachyos-3.jpg"], "colores": [["#12B6B2", "#D9777A"], ["#37579E", "#6DB8B8"], ["#109E8E", "#D97782"]]}, {"id": "animados", "nombre": "Animado", "simbolo": "動", "desc": "Para fondos de vídeo: los colores salen del propio vídeo.", "acento": "#e6c384", "animacion": "suave", "imagenes": ["galeria/animados-1.jpg"], "colores": [["#FDA26C", "#9D1CB8"]]}]};</script>
+<script src="app.js" defer></script>
+</body>
+</html>
