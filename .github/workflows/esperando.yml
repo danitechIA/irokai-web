@@ -1,4 +1,5 @@
-# Cuenta los apuntados CONFIRMADOS de la lista de espera (Buttondown) y lo publica en docs/esperando.json.
+# Cuenta los apuntados CONFIRMADOS de la lista de espera (Buttondown), lo publica en docs/esperando.json
+# y, al llegar a 85, abre un aviso (issue) para decidir antes del límite de 100 del plan gratis.
 # La clave va en el secreto BUTTONDOWN_API_KEY del repositorio: nunca en el código.
 name: Contador de la lista de espera
 on:
@@ -6,6 +7,7 @@ on:
   workflow_dispatch: {}
 permissions:
   contents: write
+  issues: write
 jobs:
   contar:
     runs-on: ubuntu-latest
@@ -15,12 +17,37 @@ jobs:
         env:
           CLAVE: ${{ secrets.BUTTONDOWN_API_KEY }}
         run: |
-          [ -n "$CLAVE" ] || { echo "Falta el secreto BUTTONDOWN_API_KEY"; exit 1; }
-          n=$(curl -sf -H "Authorization: Token $CLAVE" "https://api.buttondown.com/v1/subscribers?type=regular&page_size=1" | python3 -c "import sys,json;print(int(json.load(sys.stdin)['count']))")
-          printf '{"n": %d}\n' "$n" > docs/esperando.json
-          cat docs/esperando.json
+          [ -n "$CLAVE" ] || { echo "::error::El secreto BUTTONDOWN_API_KEY está vacío o no existe"; exit 1; }
+          python3 - <<'PY'
+          import json, os, urllib.request, urllib.error
+          H = {"Authorization": "Token " + os.environ["CLAVE"], "User-Agent": "irokai-contador"}
+          def get(url):
+              with urllib.request.urlopen(urllib.request.Request(url, headers=H), timeout=30) as r:
+                  return json.load(r)
+          base = "https://api.buttondown.com/v1/subscribers"
+          try:                                   # 1) filtro directo: solo confirmados
+              n = int(get(base + "?type=regular&page_size=1")["count"])
+          except (urllib.error.HTTPError, KeyError, ValueError) as e:
+              print("Filtro no disponible (", e, "): cuento uno a uno")
+              n, url = 0, base + "?page_size=100"
+              while url:                         # 2) recorre todas las páginas y cuenta los «regular»
+                  d = get(url)
+                  n += sum(1 for s in d.get("results", []) if s.get("type", s.get("subscriber_type")) == "regular")
+                  url = d.get("next")
+          json.dump({"n": n}, open("docs/esperando.json", "w")); open("docs/esperando.json", "a").write("\n")
+          print("Apuntados confirmados:", n)
+          PY
       - name: Guardar si ha cambiado
         run: |
           git diff --quiet -- docs/esperando.json && { echo "Sin cambios"; exit 0; }
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/esperando.json && git commit -m "Lista de espera: $(python3 -c "import json;print(json.load(open('docs/esperando.json'))['n'])") apuntados" && git push
+          n=$(python3 -c "import json;print(json.load(open('docs/esperando.json'))['n'])")
+          git add docs/esperando.json && git commit -m "Lista de espera: $n apuntados" && git push
+      - name: Avisar al acercarse a 100
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          n=$(python3 -c "import json;print(json.load(open('docs/esperando.json'))['n'])")
+          [ "$n" -ge 85 ] || { echo "$n < 85: sin aviso"; exit 0; }
+          gh issue list --state open --search "Lista de espera cerca de 100 in:title" --json number --jq 'length' | grep -qv '^0$' && { echo "Ya avisado"; exit 0; }
+          gh issue create --title "⚠️ Lista de espera cerca de 100 ($n apuntados)" --body "La lista de espera tiene $n apuntados confirmados. Revisa el apartado E de PAGOS.md (repositorio privado) antes de llegar a 100. Cierra este aviso cuando esté resuelto."

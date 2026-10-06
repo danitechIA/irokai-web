@@ -135,9 +135,10 @@
 
   /* contador REAL de la lista de espera (lo actualiza cada 6 h una tarea de GitHub con Buttondown) */
   if (form) fetch('esperando.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(j => {
-    const n = j && +j.n, min = +D.esperando_min || 25;
+    const n = j && +j.n, min = +D.esperando_min || 1;
     if (!n || n < min) return;
     $$('[data-esperando]').forEach(b => b.textContent = n.toLocaleString('es-ES'));
+    if (n === 1) $$('.esperando').forEach(p => p.innerHTML = p.innerHTML.replace('personas esperando', 'persona esperando').replace('personas ya esperan', 'persona ya espera'));
     $$('.esperando').forEach(p => p.hidden = false);
   }).catch(() => {});
 
