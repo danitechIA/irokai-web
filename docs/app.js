@@ -101,11 +101,42 @@
     pintar(false);
   }
 
-  /* compra: enlace de Lemon Squeezy (o aviso si aún no está a la venta) */
+  /* compra: enlace de Lemon Squeezy; si aún no está a la venta, lleva al formulario «Avísame» */
+  const form = $('#avisame');
   $$('[data-comprar]').forEach(a => a.addEventListener('click', ev => {
     if (D.compra && a.hasAttribute('data-real')) { ev.preventDefault(); location.href = D.compra; return; }
-    if (!D.compra && a.hasAttribute('data-real')) { ev.preventDefault(); avisar('🚀 <b>Irokai sale muy pronto.</b> Síguenos en TikTok para enterarte el primero.'); }
+    if (form) { ev.preventDefault(); $('#precio').scrollIntoView({ behavior: quieto ? 'auto' : 'smooth', block: 'center' }); setTimeout(() => $('#av-email').focus({ preventScroll: true }), quieto ? 0 : 700); }
   }));
+
+  /* lista de aviso (MailerLite): envía el email sin salir de la página */
+  if (form) form.addEventListener('submit', async ev => {
+    ev.preventDefault();
+    const email = form.email.value.trim(), boton = $('button[type=submit]', form);
+    if (form.web.value) return;                                    // trampa para bots
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { avisar('✉️ Escribe un <b>email válido</b>.'); form.email.focus(); return; }
+    if (!form.acepto.checked) { avisar('☑️ Marca la casilla para que podamos avisarte.'); return; }
+    if (!D.lista) { avisar('🚧 La lista de aviso se abre en unos días. Vuelve pronto.'); return; }
+    boton.disabled = true; boton.textContent = 'Enviando…';
+    try {
+      const fd = new FormData();
+      if (/mailerlite/.test(D.lista)) {                            // MailerLite: responde con JSON
+        fd.append('fields[email]', email); fd.append('ml-submit', '1'); fd.append('anticsrf', 'true');
+        const r = await fetch(D.lista, { method: 'POST', body: fd });
+        const j = await r.json().catch(() => ({}));
+        if (!r.ok || j.success === false) throw new Error();
+      } else {                                                     // Buttondown: envío simple (respuesta opaca)
+        fd.append('email', email); fd.append('tag', 'lanzamiento');
+        await fetch(D.lista, { method: 'POST', body: fd, mode: 'no-cors' });
+      }
+      form.classList.add('hecho');
+      form.innerHTML = '<p class="ok">✅ <b>¡Apuntado!</b> Te hemos enviado un email a <b></b>: ábrelo y pulsa <b>Confirmar</b> para entrar en la lista. Si no lo ves, mira en spam o promociones.</p>';
+      $('.ok b:nth-of-type(2)', form).textContent = email;
+      avisar('✅ <b>¡Apuntado!</b> Revisa tu correo para confirmar.', 6000);
+    } catch {
+      boton.disabled = false; boton.textContent = 'Avísame';
+      avisar('⚠️ No se ha podido enviar. Prueba otra vez en un momento.');
+    }
+  });
 
   /* tráiler en una ventana (solo se descarga si lo abres) */
   const dlg = $('#trailer');
