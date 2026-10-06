@@ -258,3 +258,7 @@ dialog[open]{animation:aparece .45s var(--curva)}
 .avisame.hecho .ok{padding:18px;border-radius:14px;border:1px solid var(--acento);background:color-mix(in srgb,var(--acento) 12%,transparent);line-height:1.5;animation:aparecer .5s ease both}
 @keyframes aparecer{from{opacity:0;transform:translateY(8px)}}
 @media (max-width:480px){.avisame .boton{width:100%}}
+/* contador real de la lista de espera */
+.esperando{margin:0 0 14px;font-weight:600;color:var(--papel)}
+.esperando b{color:var(--acento);font-size:1.15em}
+.esperando-heroe{margin:18px 0 0;font-size:.95rem;color:var(--gris)}

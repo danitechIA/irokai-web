@@ -1,0 +1,26 @@
+# Cuenta los apuntados CONFIRMADOS de la lista de espera (Buttondown) y lo publica en docs/esperando.json.
+# La clave va en el secreto BUTTONDOWN_API_KEY del repositorio: nunca en el código.
+name: Contador de la lista de espera
+on:
+  schedule: [{ cron: "17 */6 * * *" }]   # cada 6 horas
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  contar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pedir el número a Buttondown
+        env:
+          CLAVE: ${{ secrets.BUTTONDOWN_API_KEY }}
+        run: |
+          [ -n "$CLAVE" ] || { echo "Falta el secreto BUTTONDOWN_API_KEY"; exit 1; }
+          n=$(curl -sf -H "Authorization: Token $CLAVE" "https://api.buttondown.com/v1/subscribers?type=regular&page_size=1" | python3 -c "import sys,json;print(int(json.load(sys.stdin)['count']))")
+          printf '{"n": %d}\n' "$n" > docs/esperando.json
+          cat docs/esperando.json
+      - name: Guardar si ha cambiado
+        run: |
+          git diff --quiet -- docs/esperando.json && { echo "Sin cambios"; exit 0; }
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/esperando.json && git commit -m "Lista de espera: $(python3 -c "import json;print(json.load(open('docs/esperando.json'))['n'])") apuntados" && git push

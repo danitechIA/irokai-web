@@ -133,6 +133,14 @@
     if (form) { ev.preventDefault(); $('#precio').scrollIntoView({ behavior: quieto ? 'auto' : 'smooth', block: 'center' }); setTimeout(() => $('#av-email').focus({ preventScroll: true }), quieto ? 0 : 700); }
   }));
 
+  /* contador REAL de la lista de espera (lo actualiza cada 6 h una tarea de GitHub con Buttondown) */
+  if (form) fetch('esperando.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(j => {
+    const n = j && +j.n, min = +D.esperando_min || 25;
+    if (!n || n < min) return;
+    $$('[data-esperando]').forEach(b => b.textContent = n.toLocaleString('es-ES'));
+    $$('.esperando').forEach(p => p.hidden = false);
+  }).catch(() => {});
+
   /* vuelta desde Buttondown: ?apuntado (falta confirmar) o ?confirmado (ya en la lista) */
   const vuelta = new URLSearchParams(location.search);
   if (vuelta.has('confirmado') || vuelta.has('apuntado')) {
