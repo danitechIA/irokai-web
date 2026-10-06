@@ -80,25 +80,28 @@
     let ei = 0, ii = 0, img = $('img', visor);
     try { localStorage.removeItem('irokai-est'); } catch (e) {}   // siempre empieza igual (sin saltos al cargar)
     /* precarga de verdad: primero la portada de cada estética, luego el resto; y la que vas a pulsar, al pasar el ratón */
-    const cargadas = new Set(), precargar = src => { if (!src || cargadas.has(src)) return; cargadas.add(src); const p = new Image(); p.decoding = 'async'; p.src = src; };
+    const precargar = src => { src && lista(src); };
     const enReposo = f => (window.requestIdleCallback || (g => setTimeout(g, 200)))(f);
     new IntersectionObserver((ents, obs) => {
       if (!ents.some(x => x.isIntersecting)) return; obs.disconnect();
       enReposo(() => { E.forEach(e => precargar(e.imagenes[0])); enReposo(() => E.forEach(e => e.imagenes.forEach(precargar))); });
     }, { rootMargin: '600px' }).observe(visor);
-    const pintar = (animar = true) => {
-      const e = E[ei], [a1, a2] = e.colores[ii] || [e.acento, '#E8B43A'];
+    /* cambio instantáneo: se espera a que la foto esté lista y foto + colores + textos cambian en el MISMO fotograma */
+    const listas = new Map();                                       // src → promesa de imagen decodificada
+    const lista = src => { if (!listas.has(src)) { const p = new Image(); p.src = src; listas.set(src, p.decode().catch(() => {})); } return listas.get(src); };
+    let turno = 0;
+    const pintar = async () => {
+      const yo = ++turno, e = E[ei], i = ii, src = e.imagenes[i];
+      await lista(src);
+      if (yo !== turno) return;                                     // si has pulsado otra mientras cargaba, gana la última
+      const [a1, a2] = e.colores[i] || [e.acento, '#E8B43A'];
+      raiz.classList.add('sin-transicion');                         // nada se anima: todo cambia de golpe
+      img.src = src; img.alt = `Fondo original de la estética ${e.nombre}`;
       raiz.style.setProperty('--acento', a1); raiz.style.setProperty('--acento2', a2);
       mu[0] && (mu[0].style.background = a1); mu[1] && (mu[1].style.background = a2);
       nom.textContent = `${e.simbolo} ${e.nombre}`; desc.textContent = e.desc;
       botones.forEach((b, k) => b.setAttribute('aria-pressed', String(k === ei)));
-      const src = e.imagenes[ii];
-      if (animar && img.getAttribute('src') !== src) {
-        const nueva = new Image(); nueva.src = src; nueva.alt = `Fondo original de la estética ${e.nombre}`; nueva.width = 960; nueva.height = 540;
-        nueva.style.opacity = 0; visor.prepend(nueva);
-        const vieja = img; img = nueva;                            // la vieja se desvanece y se borra; la nueva queda
-        nueva.decode().catch(() => {}).finally(() => { requestAnimationFrame(() => { nueva.style.opacity = 1; vieja.classList.add('saliendo'); setTimeout(() => vieja.remove(), 750); }); });
-      } else img.src = src;
+      requestAnimationFrame(() => requestAnimationFrame(() => raiz.classList.remove('sin-transicion')));
     };
     botones.forEach(b => {
       b.addEventListener('click', () => { ei = +b.dataset.i; ii = 0; pintar(); });
@@ -120,7 +123,7 @@
       if (e.target.closest('input,textarea')) return;
       if (e.key.toLowerCase() === 't' && !e.ctrlKey && !e.metaKey) { ei = (ei + 1) % E.length; ii = 0; pintar(); avisar(`Estética: <b>${E[ei].simbolo} ${E[ei].nombre}</b> · pulsa <b>T</b> para seguir`, 1800); }
     });
-    pintar(false);
+    pintar();
   }
 
   /* compra: enlace de Lemon Squeezy; si aún no está a la venta, lleva al formulario «Avísame» */
