@@ -71,8 +71,8 @@
   /* selector de estéticas: cambia el visor y los colores de TODA la página */
   const E = D.esteticas || [], visor = $('#visor');
   if (E.length && visor) {
-    const botones = $$('.lista-est button'), img = $('img', visor), nom = $('#est-nombre'), desc = $('#est-desc'), mu = $$('.muestras span', visor);
-    let ei = 0, ii = 0;
+    const botones = $$('.lista-est button'), nom = $('#est-nombre'), desc = $('#est-desc'), mu = $$('.muestras span', visor);
+    let ei = 0, ii = 0, img = $('img', visor);
     try { localStorage.removeItem('irokai-est'); } catch (e) {}   // siempre empieza igual (sin saltos al cargar)
     E.forEach(e => e.imagenes.forEach(src => { const p = new Image(); p.decoding = 'async'; p.loading = 'lazy'; }));
     const pintar = (animar = true) => {
