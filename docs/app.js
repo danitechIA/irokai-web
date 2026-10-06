@@ -73,7 +73,7 @@
   if (E.length && visor) {
     const botones = $$('.lista-est button'), img = $('img', visor), nom = $('#est-nombre'), desc = $('#est-desc'), mu = $$('.muestras span', visor);
     let ei = 0, ii = 0;
-    try { const g = JSON.parse(localStorage.getItem('irokai-est')); if (g && E[g.e]) { ei = g.e; ii = g.i % E[g.e].imagenes.length; } } catch (e) {}
+    try { localStorage.removeItem('irokai-est'); } catch (e) {}   // siempre empieza igual (sin saltos al cargar)
     E.forEach(e => e.imagenes.forEach(src => { const p = new Image(); p.decoding = 'async'; p.loading = 'lazy'; }));
     const pintar = (animar = true) => {
       const e = E[ei], [a1, a2] = e.colores[ii] || [e.acento, '#E8B43A'];
@@ -88,7 +88,6 @@
         nueva.decode().catch(() => {}).finally(() => { requestAnimationFrame(() => { nueva.style.opacity = 1; img.classList.add('saliendo'); setTimeout(() => img.remove(), 750); }); });
         img = nueva;
       } else img.src = src;
-      try { localStorage.setItem('irokai-est', JSON.stringify({ e: ei, i: ii })); } catch (er) {}
     };
     botones.forEach(b => b.addEventListener('click', () => { ei = +b.dataset.i; ii = 0; pintar(); }));
     $$('.flechas button', visor).forEach(b => b.addEventListener('click', () => {
