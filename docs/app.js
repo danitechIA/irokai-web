@@ -85,11 +85,20 @@
       if (animar && img.getAttribute('src') !== src) {
         const nueva = new Image(); nueva.src = src; nueva.alt = `Fondo original de la estética ${e.nombre}`; nueva.width = 960; nueva.height = 540;
         nueva.style.opacity = 0; visor.prepend(nueva);
-        nueva.decode().catch(() => {}).finally(() => { requestAnimationFrame(() => { nueva.style.opacity = 1; img.classList.add('saliendo'); setTimeout(() => img.remove(), 750); }); });
-        img = nueva;
+        const vieja = img; img = nueva;                            // la vieja se desvanece y se borra; la nueva queda
+        nueva.decode().catch(() => {}).finally(() => { requestAnimationFrame(() => { nueva.style.opacity = 1; vieja.classList.add('saliendo'); setTimeout(() => vieja.remove(), 750); }); });
       } else img.src = src;
     };
     botones.forEach(b => b.addEventListener('click', () => { ei = +b.dataset.i; ii = 0; pintar(); }));
+    /* la ruedecita del ratón desplaza la fila de estéticas en horizontal (cuando está en fila) */
+    const fila = $('.lista-est');
+    fila && fila.addEventListener('wheel', ev => {
+      const horizontal = fila.scrollWidth > fila.clientWidth + 2 && getComputedStyle(fila).flexDirection === 'row';
+      if (!horizontal || Math.abs(ev.deltaX) > Math.abs(ev.deltaY)) return;
+      const fin = fila.scrollWidth - fila.clientWidth, d = ev.deltaY * (ev.deltaMode === 1 ? 40 : 1);
+      if ((d < 0 && fila.scrollLeft <= 0) || (d > 0 && fila.scrollLeft >= fin - 1)) return;   // en los extremos sigue bajando la página
+      ev.preventDefault(); fila.scrollLeft += d;
+    }, { passive: false });
     $$('.flechas button', visor).forEach(b => b.addEventListener('click', () => {
       const n = E[ei].imagenes.length; ii = (ii + +b.dataset.paso + n) % n; pintar();
     }));
