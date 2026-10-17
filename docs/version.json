@@ -1,0 +1,15 @@
+{
+ "version": "2.0.0",
+ "fecha": "2026-10-17",
+ "notas": [
+  "Fondos animados en el selector",
+  "Apps a juego en el Centro",
+  "Gráfica del escritorio automática",
+  "Diagnóstico, soporte y actualizaciones firmadas",
+  "Licencia: 1 persona, 1 ordenador a la vez"
+ ],
+ "probado": {
+  "hyprland": "0.56.2",
+  "noctalia": "5.2.1"
+ }
+}

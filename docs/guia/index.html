@@ -205,7 +205,7 @@ footer .kanji{font:900 52px var(--serif);color:var(--acento2)}
   <h3 class="rv">Estética y fondos</h3>
   <div class="tabla rv"><table class="k">
     <tr class="nuevo"><td><kbd>Super</kbd>+<kbd>Y</kbd></td><td>Elegir estética</td></tr>
-    <tr class="nuevo"><td><kbd>Super</kbd>+<kbd>N</kbd></td><td>Siguiente fondo de la misma categoría</td></tr>
+    <tr class="nuevo"><td><kbd>Super</kbd>+<kbd>N</kbd> · mantener <kbd>Super</kbd>+<kbd>N</kbd></td><td>Siguiente fondo · selector de fondos en carrusel (← → cambiar, ↑ ↓ categoría, Enter poner)</td></tr>
     <tr class="nuevo"><td><kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>N</kbd></td><td>Fondo aleatorio</td></tr>
     <tr class="nuevo"><td><kbd>Super</kbd>+<kbd>Ctrl</kbd>+<kbd>N</kbd></td><td>Elegir fondo con vista previa</td></tr>
     <tr><td><kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>W</kbd></td><td>Panel de fondos de Noctalia (por carpetas)</td></tr>
@@ -235,7 +235,10 @@ footer .kanji{font:900 52px var(--serif);color:var(--acento2)}
   <div class="tabla rv"><table class="k">
     <tr><td><kbd>Super</kbd>+<kbd>←↑→↓</kbd></td><td>Pasar a la ventana de al lado</td></tr>
     <tr><td><kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>←↑→↓</kbd></td><td>Mover la ventana</td></tr>
-    <tr><td><kbd>Super</kbd>+<kbd>F</kbd> / <kbd>D</kbd></td><td>Pantalla completa / maximizar</td></tr>
+    <tr><td><kbd>Super</kbd>+<kbd>F</kbd> / <kbd>Shift</kbd>+<kbd>F</kbd></td><td>Pantalla completa / maximizar</td></tr>
+    <tr class="nuevo"><td><kbd>Super</kbd>+<kbd>D</kbd></td><td>Mostrar el escritorio (como en Windows)</td></tr>
+    <tr class="nuevo"><td><kbd>Alt</kbd>+<kbd>F4</kbd> · <kbd>Super</kbd>+<kbd>Q</kbd></td><td>Cerrar la ventana</td></tr>
+    <tr class="nuevo"><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Esc</kbd></td><td>Administrador de tareas (monitor del sistema y procesos)</td></tr>
     <tr><td><kbd>Super</kbd>+<kbd>Alt</kbd>+<kbd>Espacio</kbd></td><td>Ventana flotante ⇄ en mosaico</td></tr>
     <tr><td><kbd>Super</kbd>+<kbd>J</kbd></td><td>Girar la división horizontal/vertical</td></tr>
     <tr><td><kbd>Super</kbd>+arrastrar (clic izq. / der.)</td><td>Mover / cambiar el tamaño con el ratón</td></tr>
@@ -245,10 +248,11 @@ footer .kanji{font:900 52px var(--serif);color:var(--acento2)}
 
   <h3 class="rv">Escritorios</h3>
   <div class="tabla rv"><table class="k">
-    <tr><td><kbd>Super</kbd>+<kbd>Alt</kbd>+<kbd>1</kbd>…<kbd>3</kbd></td><td>Ir al escritorio 1, 2 o 3</td></tr>
+    <tr class="nuevo"><td><kbd>Super</kbd>+<kbd>1</kbd>…<kbd>9</kbd></td><td>Ir al escritorio 1…9 (del 4 en adelante se crean al momento y desaparecen si los dejas vacíos)</td></tr>
+    <tr class="nuevo"><td><kbd>Super</kbd>+<kbd>S</kbd></td><td>Buscar apps y fijar o quitar apps del dock (como en Windows)</td></tr>
     <tr><td><kbd>Super</kbd>+<kbd>Ctrl</kbd>+<kbd>←</kbd>/<kbd>→</kbd> o la rueda</td><td>Escritorio anterior / siguiente</td></tr>
     <tr><td><kbd>Super</kbd>+<kbd>Ctrl</kbd>+<kbd>↓</kbd></td><td>Ir a un escritorio vacío</td></tr>
-    <tr><td><kbd>Super</kbd>+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd>…<kbd>3</kbd></td><td>Mandar la ventana al escritorio N</td></tr>
+    <tr class="nuevo"><td><kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd>…<kbd>9</kbd></td><td>Mandar la ventana al escritorio N</td></tr>
   </table></div>
 
   <h3 class="rv">Utilidades de Noctalia</h3>
@@ -315,11 +319,27 @@ footer .kanji{font:900 52px var(--serif);color:var(--acento2)}
 
   <h3 class="rv">Fondos animados 動</h3>
   <p class="rv">Los vídeos y GIF de <code>~/Imágenes/Wallpapers/animados</code> se reproducen como fondo. Se pausan solos cuando juegas o ves algo a pantalla completa y se recuerdan al reiniciar.</p>
+  <p class="rv">También salen en el selector (mantén <kbd>Super</kbd>+<kbd>N</kbd>), en la categoría <b>ANIMADOS</b>. Se decodifican en la gráfica que dibuja el escritorio, así que no despiertan la NVIDIA.</p>
 <pre class="rv"><code><span class="k">animado</span>                    <span class="c"># elegir uno (con vista previa)</span>
 <span class="k">animado</span> siguiente          <span class="c"># o Super+Alt+W</span>
 <span class="k">animado</span> parar              <span class="c"># o Super+Ctrl+W: vuelve a tu fondo fijo</span>
 <span class="k">animado</span> ~/Vídeos/mio.mp4   <span class="c"># cualquier vídeo tuyo</span></code></pre>
-  <p class="rv">Para conseguir más fondos animados, busca en <b>moewalls.com</b> o <b>motionbgs.com</b> y guarda los .mp4 en la carpeta <code>animados</code>.</p>
+  <p class="rv">Para conseguir más fondos animados, busca en <b>motionbgs.com</b> (sin marca de agua) y guarda los .mp4 en la carpeta <code>animados</code>. Son de sus autores: úsalos solo en tu escritorio, no los publiques ni los vendas.</p>
+
+  <h3 class="rv">Conseguir más fondos</h3>
+  <p class="rv">Irokai trae sus fondos originales. Si quieres más, descárgalos tú con estos comandos: se guardan en su carpeta y toman su estética solos.</p>
+<pre class="rv"><code><span class="k">irokai fondos packs</span>             <span class="c"># colecciones públicas de la comunidad que puedes descargar</span>
+<span class="k">irokai fondos descargar</span> anime   <span class="c"># descarga un pack (sin nombre: todos)</span>
+<span class="k">irokai fondos buscar</span> samurai    <span class="c"># busca fondos aptos para todos los públicos en Wallhaven</span>
+<span class="k">fondo añadir</span> https://…/foto.jpg <span class="c"># cualquier imagen, carpeta o enlace</span></code></pre>
+  <p class="rv"><b>Derechos de autor:</b> las imágenes descargadas son de sus autores y solo puedes usarlas como fondo personal. No las vendas ni las compartas como si fueran tuyas. Irokai no incluye ni distribuye esas imágenes: solo te ayuda a descargarlas.</p>
+
+  <h3 class="rv">Apps a juego (opcional)</h3>
+  <p class="rv">Escribe <code>irokai apps</code> para ver qué tienes activado.</p>
+<pre class="rv"><code><span class="k">irokai vscode</span>               <span class="c"># VS Code cómodo, con extensiones y colores de tu estética (añade «es» para español)</span>
+<span class="k">irokai spotify-tema activar</span> <span class="c"># Spotify con los colores de cada fondo (Spicetify)</span>
+<span class="k">irokai discord activar</span>      <span class="c"># Discord con los colores de cada fondo, en vivo (Vesktop)</span></code></pre>
+  <p class="rv"><b>Importante:</b> los temas de Spotify y Discord los hace la comunidad y <b>modifican esas aplicaciones</b>, algo que sus condiciones de uso no permiten. Por eso no vienen activados: antes de activarlos se te avisa y tienes que escribir ACEPTO. La decisión es tuya, y se quitan con <code>… desactivar</code>. VS Code no modifica nada, solo cambia sus ajustes.</p>
 
   <h3 class="rv">Estéticas con comandos</h3>
 <pre class="rv"><code><span class="k">estilo</span>                     <span class="c"># elegir (o Super+Y)</span>
@@ -349,7 +369,11 @@ footer .kanji{font:900 52px var(--serif);color:var(--acento2)}
     <tr><td><code>irokai atajos</code></td><td>Todos los atajos con buscador</td></tr>
     <tr><td><code>irokai demo --grabar video.mp4</code></td><td>Lo enseña todo solo mientras lo graba (capítulo 七)</td></tr>
     <tr><td><code>irokai japones</code></td><td>Activa la escritura en japonés</td></tr>
-    <tr><td><code>irokai actualizar</code> / <code>limpiar</code></td><td>Actualizar el sistema / liberar espacio</td></tr>
+    <tr><td><code>irokai actualizar</code> / <code>limpiar</code></td><td>Actualizar el sistema (y avisar de versiones nuevas de Irokai) / liberar espacio</td></tr>
+    <tr><td><code>irokai diagnostico</code></td><td>Revisa que todo funcione y dice cómo arreglar lo que falle</td></tr>
+    <tr><td><code>irokai soporte</code></td><td>Prepara un informe sin datos personales para pedir ayuda</td></tr>
+    <tr><td><code>irokai apps</code></td><td>VS Code, Spotify y Discord a juego (también en el Centro, <kbd>Super</kbd>+<kbd>M</kbd>)</td></tr>
+    <tr><td><code>irokai escritorio-gpu</code></td><td>Qué gráfica dibuja el escritorio (capítulo 五)</td></tr>
     <tr><td><code>irokai guia</code> (o <code>guia</code>)</td><td>Esta guía</td></tr>
     <tr><td><code>irokai ayuda</code></td><td>Resumen de todo</td></tr>
   </table></div>
@@ -369,9 +393,16 @@ footer .kanji{font:900 52px var(--serif);color:var(--acento2)}
 <span class="k">pantallas</span> estado</code></pre>
   <p class="rv">Los monitores siempre van a su frecuencia máxima. Si desconectas el monitor externo, el portátil se enciende solo y nunca te quedas sin pantalla. <kbd>Super</kbd>+<kbd>F8</kbd> o la tecla de proyector van pasando por los modos.</p>
 
+  <h3 class="rv">Portátiles con dos gráficas</h3>
+  <p class="rv">Si tu portátil tiene gráfica integrada y dedicada (NVIDIA, AMD o Intel Arc), Irokai decide al iniciar sesión cuál dibuja el escritorio. Regla: <b>nunca se dibuja en una gráfica para mostrarse por la otra</b>, porque eso obliga a la CPU a copiar cada fotograma.</p>
+<pre class="rv"><code><span class="k">irokai escritorio-gpu</span>             <span class="c"># ver qué gráfica se usa y a cuál va cada pantalla</span>
+<span class="k">irokai escritorio-gpu</span> auto        <span class="c"># por defecto: la dedicada si el monitor está conectado a ella</span>
+<span class="k">irokai escritorio-gpu</span> integrada   <span class="c"># siempre la integrada (la dedicada solo para juegos)</span></code></pre>
+  <p class="rv">Con el monitor conectado al puerto de la dedicada (muchas veces el USB-C o el DisplayPort), al iniciar sesión el escritorio pasa a ella y se apagan las pantallas de la integrada. Si no, todo va en la integrada y la dedicada duerme hasta que juegas. Si con la dedicada la sesión fallara dos veces, vuelve sola a la integrada. Cierra sesión antes de desconectar ese monitor.</p>
+
   <h3 class="rv">Modos: juego, ahorro y luz nocturna</h3>
   <div class="grid rv">
-    <div class="card"><h4>🎮 Modo juego · <kbd>Super</kbd>+<kbd>G</kbd></h4><p>Quita el desenfoque, las sombras y las animaciones pesadas, congela el fondo animado, silencia las notificaciones y pone el perfil de energía en rendimiento.</p></div>
+    <div class="card"><h4>🎮 Modo juego · <kbd>Super</kbd>+<kbd>G</kbd></h4><p>Quita el desenfoque, las sombras y las animaciones pesadas, congela el fondo animado, silencia las notificaciones y pone el perfil de energía en rendimiento. Se aplica al instante, sin recargar el escritorio.</p></div>
     <div class="card"><h4>🔋 Modo ahorro · <kbd>Super</kbd>+<kbd>B</kbd></h4><p>Lo mismo, pero con el perfil de ahorro de energía: más horas de batería.</p></div>
     <div class="card"><h4>🌙 Luz nocturna · <kbd>Super</kbd>+<kbd>F6</kbd></h4><p>Tonos cálidos para descansar la vista por la noche.</p></div>
   </div>
@@ -517,7 +548,8 @@ footer .kanji{font:900 52px var(--serif);color:var(--acento2)}
   <div class="cab rv"><span class="num">十</span><div><small>救助 · RESCATE</small><h2>Mantenimiento y rescate</h2></div></div>
   <h3 class="rv">Costumbres sanas</h3>
   <div class="tabla rv"><table class="k">
-    <tr><td><code>irokai actualizar</code></td><td>Una vez por semana: actualiza el sistema y lo de AUR. Si se actualizó el kernel, reinicia.</td></tr>
+    <tr><td><code>irokai actualizar</code></td><td>Una vez por semana: actualiza el sistema y lo de AUR, avisa si hay versión nueva de Irokai y revisa que todo vaya bien. Si se actualizó el kernel, reinicia.</td></tr>
+    <tr><td><code>irokai diagnostico</code></td><td>Cuando algo raro pase: dice qué falla y cómo arreglarlo</td></tr>
     <tr><td><code>irokai limpiar</code></td><td>Cada mes: borra paquetes huérfanos, cachés viejas y registros antiguos</td></tr>
     <tr><td><kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>U</kbd></td><td>Ver si hay actualizaciones pendientes</td></tr>
   </table></div>
@@ -527,7 +559,15 @@ footer .kanji{font:900 52px var(--serif);color:var(--acento2)}
     <div class="card"><span class="ico">📸</span><h4>Sistema entero</h4><p>Abre <b>Btrfs Assistant</b> → Snapper para ver las instantáneas y restaurar una. Si el ordenador no arranca, elige una instantánea en el menú de arranque (Limine).</p></div>
     <div class="card"><span class="ico">🧹</span><h4>Quitar Irokai</h4><p><code>./uninstall.sh</code> (en la carpeta donde descomprimiste Irokai) lo quita y deja todo como estaba, sin borrar tus fondos.</p></div>
   </div>
+  <h3 class="rv">Versiones nuevas de Irokai</h3>
+  <p class="rv">Cuando <code>irokai actualizar</code> avise de una versión nueva, descárgala con el enlace del email de compra y:</p>
+<pre class="rv"><code><span class="k">irokai actualizar irokai</span> ~/Descargas/irokai-X.Y.Z.zip   <span class="c"># comprueba la firma, guarda tu versión y la instala</span>
+<span class="k">irokai actualizar volver</span>                             <span class="c"># si algo va mal, vuelve a la anterior</span></code></pre>
+  <p class="rv">Solo se instalan zips oficiales (van firmados) y hace falta la licencia activa. Tu configuración y tus fondos no se tocan.</p>
+  <h3 class="rv">Pedir ayuda</h3>
+  <p class="rv"><code>irokai soporte</code> crea <code>~/irokai-soporte.txt</code> con el diagnóstico y las versiones (sin tu nombre de usuario ni el del equipo) y lo copia al portapapeles. Pégalo en un email a soporte contando qué pasa.</p>
   <h3 class="rv">Tu licencia</h3>
+  <p class="rv">Una licencia es para <b>una persona</b> y funciona en <b>un ordenador a la vez</b>. Para cambiar de ordenador, libérala en el anterior y actívala en el nuevo.</p>
 <pre class="rv"><code><span class="k">irokai licencia</span>                  <span class="c"># ver si está activada</span>
 <span class="k">irokai licencia</span> activar IRK1-…   <span class="c"># activar (también vale la clave del correo de compra)</span>
 <span class="k">irokai licencia</span> desactivar        <span class="c"># liberarla para usarla en otro ordenador</span></code></pre>
