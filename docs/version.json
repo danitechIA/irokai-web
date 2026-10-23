@@ -1,12 +1,14 @@
 {
- "version": "2.0.0",
- "fecha": "2026-10-17",
+ "version": "2.0.1",
+ "fecha": "2026-10-23",
  "notas": [
-  "Fondos animados en el selector",
-  "Apps a juego en el Centro",
-  "Gráfica del escritorio automática",
-  "Diagnóstico, soporte y actualizaciones firmadas",
-  "Licencia: 1 persona, 1 ordenador a la vez"
+  "Arranque seguro: la barra aparece aunque Irokai falle",
+  "Actualizar el sistema con instantánea y sin versiones de Hyprland/Noctalia sin probar",
+  "Actualizaciones de Irokai sin email (si la tienda lo ofrece)",
+  "Funciona en Arch Linux y EndeavourOS",
+  "Pantallas: «solo externa» fiable y cambios en 60 ms",
+  "Atajos sin teclas F (teclados 60 %)",
+  "Fondo animado coherente con los modos juego y ahorro"
  ],
  "probado": {
   "hyprland": "0.56.2",
@@ -20,5 +22,6 @@
    "5.2",
    "5.3"
   ]
- }
+ },
+ "zip": ""
 }
