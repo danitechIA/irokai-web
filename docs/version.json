@@ -11,5 +11,13 @@
  "probado": {
   "hyprland": "0.56.2",
   "noctalia": "5.2.1"
+ },
+ "certificado": {
+  "hyprland": [
+   "0.56"
+  ],
+  "noctalia": [
+   "5.2"
+  ]
  }
 }
