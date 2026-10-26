@@ -404,12 +404,14 @@ footer .kanji{font:900 52px var(--serif);color:var(--acento2)}
 
   <h3 class="rv">Modos: juego, ahorro y luz nocturna</h3>
   <div class="grid rv">
-    <div class="card"><h4>🎮 Modo juego · <kbd>Super</kbd>+<kbd>G</kbd></h4><p>Quita el desenfoque, las sombras y las animaciones pesadas, congela el fondo animado, silencia las notificaciones y pone el perfil de energía en rendimiento. Se aplica al instante, sin recargar el escritorio.</p></div>
+    <div class="card"><h4>🎮 Modo juego · <kbd>Super</kbd>+<kbd>G</kbd></h4><p>Quita el desenfoque, las sombras y las animaciones pesadas, congela el fondo animado, silencia las notificaciones y pone el perfil de energía en rendimiento. Se aplica al instante, sin recargar el escritorio. <b>Automático:</b> en Steam, juego → Propiedades → Opciones de lanzamiento, escribe <code>gamemoderun %command%</code> y el modo juego se pondrá al abrirlo y se quitará al cerrarlo.</p></div>
     <div class="card"><h4>🔋 Modo ahorro · <kbd>Super</kbd>+<kbd>B</kbd></h4><p>Lo mismo, pero con el perfil de ahorro de energía: más horas de batería.</p></div>
     <div class="card"><h4>🌙 Luz nocturna · <kbd>Super</kbd>+<kbd>Alt</kbd>+<kbd>N</kbd></h4><p>Tonos cálidos para descansar la vista por la noche.</p></div>
   </div>
   <h3 class="rv">Widgets del escritorio que se mueven</h3>
-  <p class="rv">Pulsa <kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd>: aparece una rejilla. <b>Arrastra con el ratón</b> el reproductor de música, el visualizador o cualquier widget a donde quieras. Con el botón <b>+</b> añades más (reloj, tiempo, calendario…). Pulsa <b>Hecho</b> para guardar.</p>
+  <p class="rv">Pulsa <kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd>: aparece una rejilla. <b>Arrastra con el ratón</b> el reproductor de música, el visualizador o cualquier widget a donde quieras. Con el botón <b>+</b> añades más (reloj, tiempo, calendario…). Pulsa <b>Hecho</b> para guardar. Cuando hay ventanas encima se esconden solos (así no gastan gráfica) y vuelven al ver el escritorio.</p>
+  <h3 class="rv">Pantalla apagada y bloqueo</h3>
+  <p class="rv">Si no tocas el PC, la pantalla se apaga a los <b>10 minutos</b> y se bloquea a los <b>15</b> (antes se oscurece 3 segundos: mueve el ratón y se cancela). Un vídeo o un juego a pantalla completa no cuenta. Para cambiar los tiempos o activar la suspensión: Ajustes de Noctalia → <b>Inactividad</b>.</p>
   <h3 class="rv">Ajustes · <kbd>Super</kbd>+<kbd>I</kbd></h3>
   <p class="rv">Un menú con todo lo configurable: estética automática, colores por fondo, colores de Spotify, sonidos, animaciones, cambio automático de fondo, modos, luz nocturna y widgets. También puedes editar a mano <code>~/.config/irokai/irokai.conf</code>.</p>
 
@@ -559,7 +561,7 @@ footer .kanji{font:900 52px var(--serif);color:var(--acento2)}
   <h3 class="rv">Volver atrás</h3>
   <div class="grid rv">
     <div class="card"><span class="ico">🗂️</span><h4>Configuración</h4><p>Antes de instalarse, Irokai guardó una copia de tu configuración en <code>~/.local/share/irokai/copias/</code>. Para restaurarla: <code>tar xzf &lt;copia&gt; -C ~/.config</code></p></div>
-    <div class="card"><span class="ico">📸</span><h4>Sistema entero</h4><p>Abre <b>Btrfs Assistant</b> → Snapper para ver las instantáneas y restaurar una. Si el ordenador no arranca, elige una instantánea en el menú de arranque (Limine).</p></div>
+    <div class="card"><span class="ico">📸</span><h4>Sistema entero</h4><p>Antes de cada actualización se guarda una instantánea. Para volver: reinicia, elige la instantánea en el <b>menú de arranque (Limine)</b> y, cuando arranque, acepta «restaurar». Es más seguro que hacerlo desde Btrfs Assistant, que puede dejarte con otro kernel. <code>irokai diagnostico</code> te dice si las instantáneas salen en el menú y, si no, cómo activarlo.</p></div>
     <div class="card"><span class="ico">🧹</span><h4>Quitar Irokai</h4><p><code>./uninstall.sh</code> (en la carpeta donde descomprimiste Irokai) lo quita y deja todo como estaba, sin borrar tus fondos.</p></div>
   </div>
   <h3 class="rv">Versiones nuevas de Irokai</h3>

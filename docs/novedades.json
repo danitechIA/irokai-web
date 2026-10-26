@@ -1,0 +1,19 @@
+[
+ {
+  "version": "2.0.1",
+  "fecha": "2026-10-23",
+  "notas": [
+   "Arranque seguro: la barra aparece aunque Irokai falle",
+   "Actualizar el sistema con instantánea y sin versiones de Hyprland/Noctalia sin probar",
+   "Actualizaciones de Irokai sin email (si la tienda lo ofrece)",
+   "Funciona en Arch Linux y EndeavourOS",
+   "Pantallas: «solo externa» fiable y cambios en 60 ms",
+   "Atajos sin teclas F (teclados 60 %)",
+   "Fondo animado coherente con los modos juego y ahorro"
+  ],
+  "probado": {
+   "hyprland": "0.56.2",
+   "noctalia": "5.2.1"
+  }
+ }
+]
