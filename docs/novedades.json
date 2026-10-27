@@ -1,5 +1,20 @@
 [
  {
+  "version": "2.1.2",
+  "fecha": "2026-10-27",
+  "notas": [
+   "Nuevo: esfera de música en el centro del escritorio, de serie",
+   "Nuevo: irokai animados buscar <tema> busca y descarga fondos animados en Full HD",
+   "Nuevo: doble clic en el widget del tiempo para cambiar la ciudad, sin terminal",
+   "Arreglado: el tiempo se sincroniza solo desde el primer día (antes se quedaba en «Sin datos»)",
+   "Arreglado: las instalaciones nuevas ya tienen el dock"
+  ],
+  "probado": {
+   "hyprland": "0.56.2",
+   "noctalia": "5.2.1"
+  }
+ },
+ {
   "version": "2.1.1",
   "fecha": "2026-10-27",
   "notas": [
