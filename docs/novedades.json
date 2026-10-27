@@ -1,5 +1,23 @@
 [
  {
+  "version": "2.1.1",
+  "fecha": "2026-10-27",
+  "notas": [
+   "Nuevo: Irokai se activa con tu licencia al instalar y queda guardada; no vuelve a pedirla",
+   "Mejorado: con música sonando, Noctalia gasta un 5 % menos de CPU",
+   "Mejorado: la pantalla solo se bloquea sola con el escritorio vacío (se cambia en Ajustes)",
+   "Mejorado: Diagnóstico y apps a juego, dentro del Centro",
+   "Nuevo: Centro → Escritorio → «Siempre a la vista» para los widgets",
+   "Arreglado: fondos en blanco y negro sin colores inventados, y tu esquema de Apariencia se respeta al cambiar de fondo",
+   "Arreglado: widgets que no aparecían al instalar sin Hyprland en marcha o al elegir barras, ondas o esfera",
+   "Arreglado: el preset «Minimal» deja el dock a la vista, y la ciudad del tiempo y el cambio de fondo se guardan bien"
+  ],
+  "probado": {
+   "hyprland": "0.56.2",
+   "noctalia": "5.2.1"
+  }
+ },
+ {
   "version": "2.1.0",
   "fecha": "2026-10-27",
   "notas": [
