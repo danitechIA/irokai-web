@@ -1,14 +1,14 @@
 {
- "version": "2.0.1",
- "fecha": "2026-10-23",
+ "version": "2.1.0",
+ "fecha": "2026-10-27",
  "notas": [
-  "Arranque seguro: la barra aparece aunque Irokai falle",
-  "Actualizar el sistema con instantánea y sin versiones de Hyprland/Noctalia sin probar",
-  "Actualizaciones de Irokai sin email (si la tienda lo ofrece)",
-  "Funciona en Arch Linux y EndeavourOS",
-  "Pantallas: «solo externa» fiable y cambios en 60 ms",
-  "Atajos sin teclas F (teclados 60 %)",
-  "Fondo animado coherente con los modos juego y ahorro"
+  "Nuevo: el Centro (Super+M) es el sitio para cambiarlo todo, sin terminal: pestañas Escritorio, Apariencia y Ajustes ampliados",
+  "Nuevo: Apariencia: elige cómo se ve todo (paneles de Irokai, interfaz, barra, dock, avisos, bloqueo y widgets), con estilos completos y Restablecer",
+  "Nuevo: widgets del escritorio con diseño moderno, y a elegir diseño y color de acento en cada uno",
+  "Nuevo: barras de música pegadas a cualquier borde o en el centro, con Dar la vuelta; ondas y esfera a elegir con un clic",
+  "Nuevo: compartir estéticas (irokai estilo exportar / importar), modo juego automático e inactividad (apagar y bloquear la pantalla)",
+  "Mejorado: con música y ventanas abiertas la gráfica gasta mucho menos: los widgets se esconden solos con ventanas encima",
+  "Arreglado: el Centro ya no se cierra al cambiar algo, las barras verticales ya no salen torcidas y el plugin se recarga bien al actualizar"
  ],
  "probado": {
   "hyprland": "0.56.2",
