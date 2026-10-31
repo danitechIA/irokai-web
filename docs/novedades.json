@@ -1,5 +1,20 @@
 [
  {
+  "version": "2.2.0",
+  "fecha": "2026-10-31",
+  "notas": [
+   "Nuevo: editor de estéticas, perfiles, bienvenida guiada y 6 estéticas clásicas (Catppuccin, Dracula, Gruvbox, Kanagawa, Nord y Tokyo Night)",
+   "Nuevo: fondos favoritos, ocultar fondos, fondo según la hora, tu propia carpeta de fondos y colores de cada fondo en el selector",
+   "Nuevo: colores a medida, cambiar los atajos desde el Centro, traducir texto de la pantalla (Super+Ctrl+T) y pack de juegos opcional",
+   "Mejorado: cambiar de fondo es el doble de rápido y la terminal se lee bien con cualquier fondo",
+   "Arreglado: «irokai reparar» para dejarlo todo bien con un clic y varios fallos pequeños"
+  ],
+  "probado": {
+   "hyprland": "0.57.0",
+   "noctalia": "5.4.0"
+  }
+ },
+ {
   "version": "2.1.4",
   "fecha": "2026-10-28",
   "notas": [

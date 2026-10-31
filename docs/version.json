@@ -1,21 +1,26 @@
 {
- "version": "2.1.4",
- "fecha": "2026-10-28",
+ "version": "2.2.0",
+ "fecha": "2026-10-31",
  "notas": [
-  "Arreglado: en portátiles pequeños todo se veía demasiado grande; ahora Irokai ajusta el tamaño a tu pantalla",
-  "Nuevo: Centro → Ajustes → «Tamaño en la pantalla del portátil» para hacerlo más grande o más pequeño"
+  "Nuevo: editor de estéticas, perfiles, bienvenida guiada y 6 estéticas clásicas (Catppuccin, Dracula, Gruvbox, Kanagawa, Nord y Tokyo Night)",
+  "Nuevo: fondos favoritos, ocultar fondos, fondo según la hora, tu propia carpeta de fondos y colores de cada fondo en el selector",
+  "Nuevo: colores a medida, cambiar los atajos desde el Centro, traducir texto de la pantalla (Super+Ctrl+T) y pack de juegos opcional",
+  "Mejorado: cambiar de fondo es el doble de rápido y la terminal se lee bien con cualquier fondo",
+  "Arreglado: «irokai reparar» para dejarlo todo bien con un clic y varios fallos pequeños"
  ],
  "probado": {
-  "hyprland": "0.56.2",
-  "noctalia": "5.2.1"
+  "hyprland": "0.57.0",
+  "noctalia": "5.4.0"
  },
  "certificado": {
   "hyprland": [
-   "0.56"
+   "0.56",
+   "0.57"
   ],
   "noctalia": [
    "5.2",
-   "5.3"
+   "5.3",
+   "5.4"
   ]
  },
  "zip": "https://irokai-descargas.irokai-descargas.workers.dev/descargar?version={version}&clave={clave}&instancia={instancia}"
