@@ -1,5 +1,20 @@
 [
  {
+  "version": "2.2.1",
+  "fecha": "2026-10-31",
+  "notas": [
+   "Arreglado: las apps que abres desde el Centro o la Rueda ya no se cierran solas, y la pantalla ya no se apaga a los 10 minutos si tienes apps abiertas",
+   "Arreglado: el selector de fondos responde a F, O, Supr y Tab; el panel de Apps enseña todas tus apps; el temporizador avisa aunque cierres el Reloj",
+   "Arreglado: la Rueda vuelve a responder, la captura ya no sale con el panel encima y los interruptores cambian al primer clic",
+   "Mejorado: el fondo animado se congela con ventanas encima y la gráfica gasta mucho menos (del 44 al 10 %)",
+   "Mejorado: compatible con Noctalia 5.4, la terminal se lee bien en modo claro y los ajustes explican por qué no aceptan un valor"
+  ],
+  "probado": {
+   "hyprland": "0.57.0",
+   "noctalia": "5.4.0"
+  }
+ },
+ {
   "version": "2.2.0",
   "fecha": "2026-10-31",
   "notas": [
