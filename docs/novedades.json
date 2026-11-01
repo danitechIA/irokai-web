@@ -1,5 +1,17 @@
 [
  {
+  "version": "2.2.2",
+  "fecha": "2026-11-01",
+  "notas": [
+   "Arreglado: con Hyprland 0.57 la gráfica NVIDIA se quedaba despierta toda la sesión aunque no jugaras, gastando batería y calentando el portátil. Ahora duerme hasta que abres un juego.",
+   "Arreglado: en portátiles cuyo controlador NVIDIA trae desactivado el apagado automático, Irokai lo activa al instalar y el diagnóstico te dice cómo."
+  ],
+  "probado": {
+   "hyprland": "0.57.0",
+   "noctalia": "5.4.1"
+  }
+ },
+ {
   "version": "2.2.1",
   "fecha": "2026-10-31",
   "notas": [
