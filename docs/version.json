@@ -1,9 +1,17 @@
 {
- "version": "2.2.2",
- "fecha": "2026-11-01",
+ "version": "2.2.3",
+ "fecha": "2026-11-03",
  "notas": [
-  "Arreglado: con Hyprland 0.57 la gráfica NVIDIA se quedaba despierta toda la sesión aunque no jugaras, gastando batería y calentando el portátil. Ahora duerme hasta que abres un juego.",
-  "Arreglado: en portátiles cuyo controlador NVIDIA trae desactivado el apagado automático, Irokai lo activa al instalar y el diagnóstico te dice cómo."
+  "Arreglado: «irokai limpiar» ya no desinstala paquetes sin preguntar; primero te enseña la lista y por defecto dice que no.",
+  "Arreglado: Super+Shift+U ahora actualiza con «irokai actualizar», con las mismas protecciones que el comando.",
+  "Arreglado: al desactivar la licencia, el archivo local solo se borra si el servidor confirma que se ha liberado.",
+  "Arreglado: volver atrás baja una sola versión y se guardan 3 copias.",
+  "Arreglado: el modo juego de GameMode ya no sigue activo tras reiniciar.",
+  "Arreglado: las descargas de Wallhaven ya no dejan fondos rotos.",
+  "Arreglado: instalar y desinstalar ya no pueden dejar a medias los archivos de Noctalia.",
+  "Arreglado: tras desinstalar, la pantalla sigue apagándose y la sesión bloqueándose por inactividad; se devuelven los archivos que Irokai apartó.",
+  "Mejorado: una estética importada ya no puede colar órdenes en la configuración de Hyprland.",
+  "Mejorado: actualizar y el diagnóstico avisan de programas con bibliotecas rotas, y hyprwire se retiene junto a Hyprland."
  ],
  "probado": {
   "hyprland": "0.57.0",
