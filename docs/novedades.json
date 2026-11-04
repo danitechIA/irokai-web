@@ -1,5 +1,24 @@
 [
  {
+  "version": "2.2.4",
+  "fecha": "2026-11-04",
+  "notas": [
+   "Nuevo: elige en Ajustes qué navegador o app abre Super+W.",
+   "Nuevo: tamaño automático en monitores externos, con selector en Ajustes.",
+   "Nuevo: antes de instalar, Irokai comprueba tu gráfica, el espacio libre y si estás en una máquina virtual.",
+   "Mejorado: el instalador pregunta antes de tocar el arranque por la NVIDIA y te dice si salió bien.",
+   "Arreglado: Super+B ya solo activa el modo ahorro.",
+   "Arreglado: grabar con dos pantallas, y ya no dice «Grabando» si no graba.",
+   "Arreglado: favoritos y ocultos con carpetas de fondos enlazadas.",
+   "Arreglado: un fallo pasajero del servidor de licencias ya no bloquea a quien pagó.",
+   "Arreglado: copiar texto de la pantalla ya no se salta a veces un idioma instalado."
+  ],
+  "probado": {
+   "hyprland": "0.57.0",
+   "noctalia": "5.4.1"
+  }
+ },
+ {
   "version": "2.2.3",
   "fecha": "2026-11-03",
   "notas": [
