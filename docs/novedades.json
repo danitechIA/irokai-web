@@ -1,5 +1,17 @@
 [
  {
+  "version": "2.2.5",
+  "fecha": "2026-11-06",
+  "notas": [
+   "Mejorado: Irokai instala ~460 MB menos (fuente japonesa más ligera y una fuente que no se usaba, fuera).",
+   "Mejorado: la caché de paquetes del sistema se limpia sola cada semana."
+  ],
+  "probado": {
+   "hyprland": "0.57.0",
+   "noctalia": "5.4.1"
+  }
+ },
+ {
   "version": "2.2.4",
   "fecha": "2026-11-04",
   "notas": [
