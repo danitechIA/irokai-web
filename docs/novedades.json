@@ -1,5 +1,18 @@
 [
  {
+  "version": "2.2.6",
+  "fecha": "2026-11-07",
+  "notas": [
+   "Arreglado: con el PC muy ocupado (por ejemplo, actualizando), el plugin de Irokai podía desactivarse y el widget de música dejaba de verse. Ahora gasta la mitad y, si aun así se para, Irokai lo vuelve a encender solo.",
+   "Arreglado: actualizar VS Code, Spotify u otros programas desde la barra ya no se queda parado enseñando los cambios del paquete.",
+   "Mejorado: Tab en la terminal completa también grabar, ocr, juegos, widgets, visualizador y otras órdenes."
+  ],
+  "probado": {
+   "hyprland": "0.57.1",
+   "noctalia": "5.4.1"
+  }
+ },
+ {
   "version": "2.2.5",
   "fecha": "2026-11-06",
   "notas": [
