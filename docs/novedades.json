@@ -1,5 +1,19 @@
 [
  {
+  "version": "2.2.7",
+  "fecha": "2026-11-07",
+  "notas": [
+   "Arreglado: carpetas de fondos con espacios o «&» en el nombre ya no rompen la configuración.",
+   "Arreglado: desinstalar respeta tus ganchos de Noctalia y devuelve tu configuración previa de VS Code y Spotify; los ajustes de VS Code con comentarios ya no se reescriben.",
+   "Arreglado: la limpieza de caché ya no borra miniaturas si la carpeta de fondos no está, y el selector se abre sobre tu fondo actual.",
+   "Mejorado: la comprobación de compatibilidad ya no despierta la NVIDIA, fondos nítidos al cambiar a un monitor más grande y mejor contraste de la terminal."
+  ],
+  "probado": {
+   "hyprland": "0.57.1",
+   "noctalia": "5.4.1"
+  }
+ },
+ {
   "version": "2.2.6",
   "fecha": "2026-11-07",
   "notas": [

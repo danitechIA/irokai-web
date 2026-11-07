@@ -1,10 +1,11 @@
 {
- "version": "2.2.6",
+ "version": "2.2.7",
  "fecha": "2026-11-07",
  "notas": [
-  "Arreglado: con el PC muy ocupado (por ejemplo, actualizando), el plugin de Irokai podía desactivarse y el widget de música dejaba de verse. Ahora gasta la mitad y, si aun así se para, Irokai lo vuelve a encender solo.",
-  "Arreglado: actualizar VS Code, Spotify u otros programas desde la barra ya no se queda parado enseñando los cambios del paquete.",
-  "Mejorado: Tab en la terminal completa también grabar, ocr, juegos, widgets, visualizador y otras órdenes."
+  "Arreglado: carpetas de fondos con espacios o «&» en el nombre ya no rompen la configuración.",
+  "Arreglado: desinstalar respeta tus ganchos de Noctalia y devuelve tu configuración previa de VS Code y Spotify; los ajustes de VS Code con comentarios ya no se reescriben.",
+  "Arreglado: la limpieza de caché ya no borra miniaturas si la carpeta de fondos no está, y el selector se abre sobre tu fondo actual.",
+  "Mejorado: la comprobación de compatibilidad ya no despierta la NVIDIA, fondos nítidos al cambiar a un monitor más grande y mejor contraste de la terminal."
  ],
  "probado": {
   "hyprland": "0.57.1",
