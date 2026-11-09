@@ -1,5 +1,18 @@
 [
  {
+  "version": "2.2.9",
+  "fecha": "2026-11-09",
+  "notas": [
+   "Arreglado: el pack de juegos (Steam, Lutris, Heroic…) no se instalaba si el sistema tenía actualizaciones pendientes: ahora actualiza primero, de forma segura.",
+   "Arreglado: si falla un servidor de descargas, el pack de juegos lo vuelve a intentar en vez de cancelarlo todo.",
+   "Arreglado: al terminar de instalar el pack de juegos ya no se abre una pantalla de configuración de la terminal."
+  ],
+  "probado": {
+   "hyprland": "0.57.1",
+   "noctalia": "5.4.1"
+  }
+ },
+ {
   "version": "2.2.8",
   "fecha": "2026-11-09",
   "notas": [

@@ -1,11 +1,10 @@
 {
- "version": "2.2.8",
+ "version": "2.2.9",
  "fecha": "2026-11-09",
  "notas": [
-  "Arreglado: con un juego abierto (o el PC muy ocupado) ya no sale «irokai/escritorio:servicio dejó de responder»: el servicio de los widgets descansa mientras están tapados.",
-  "Nuevo: buscador en el Centro (Super+M): escribe lo que buscas (color, barras, dock, sonido…) y cámbialo desde ahí mismo.",
-  "Nuevo: Apariencia → Colores: el color de todo en un solo sitio, también las barras y las ondas de música, con degradados.",
-  "Mejorado: en el editor de estéticas, «Del fondo» junto a los colores; elegir un color fijo ya no lo pisa el fondo."
+  "Arreglado: el pack de juegos (Steam, Lutris, Heroic…) no se instalaba si el sistema tenía actualizaciones pendientes: ahora actualiza primero, de forma segura.",
+  "Arreglado: si falla un servidor de descargas, el pack de juegos lo vuelve a intentar en vez de cancelarlo todo.",
+  "Arreglado: al terminar de instalar el pack de juegos ya no se abre una pantalla de configuración de la terminal."
  ],
  "probado": {
   "hyprland": "0.57.1",
